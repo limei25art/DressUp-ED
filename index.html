@@ -2,20 +2,99 @@
 <html lang="zh-TW">
 <head>
     <meta charset="UTF-8">
-    <title>我的 GitHub Pages 網站</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            text-align: center;
-            background-color: #f4f4f4;
-        }
-        h1 {
-            color: #2c3e50;
-        }
-    </style>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>簡易換裝大師</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      background-color: #f0f0f0;
+      margin: 0;
+      padding: 20px;
+    }
+    h1 {
+      color: #333;
+    }
+    #character {
+      width: 200px;
+      height: 300px;
+      position: relative;
+      background-color: #e0e0e0;
+      border: 2px solid #333;
+      border-radius: 10px;
+      margin-bottom: 20px;
+    }
+    #shirt, #pants, #hat {
+      position: absolute;
+      width: 100%;
+      height: 33%;
+      transition: background-color 0.3s;
+    }
+    #shirt { top: 0; }
+    #pants { top: 33%; }
+    #hat { top: 0; height: 20%; }
+    .controls {
+      display: flex;
+      gap: 20px;
+    }
+    .control-group {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+    }
+    button {
+      padding: 10px 20px;
+      margin: 5px;
+      cursor: pointer;
+      background-color: #007bff;
+      color: white;
+      border: none;
+      border-radius: 5px;
+    }
+    button:hover {
+      background-color: #0056b3;
+    }
+  </style>
 </head>
 <body>
-    <h1>歡迎來到我的網站！</h1>
-    <p>這是由 GitHub Pages 託管的簡單網頁。</p>
+  <h1>簡易換裝大師</h1>
+  <div id="character">
+    <div id="hat"></div>
+    <div id="shirt"></div>
+    <div id="pants"></div>
+  </div>
+  <div class="controls">
+    <div class="control-group">
+      <h3>上衣</h3>
+      <button onclick="changeClothing('shirt', 'red')">紅色T恤</button>
+      <button onclick="changeClothing('shirt', 'blue')">藍色襯衫</button>
+      <button onclick="changeClothing('shirt', 'green')">綠色外套</button>
+    </div>
+    <div class="control-group">
+      <h3>褲子</h3>
+      <button onclick="changeClothing('pants', 'black')">黑色牛仔褲</button>
+      <button onclick="changeClothing('pants', 'gray')">灰色運動褲</button>
+      <button onclick="changeClothing('pants', 'brown')">棕色休閒褲</button>
+    </div>
+    <div class="control-group">
+      <h3>帽子</h3>
+      <button onclick="changeClothing('hat', 'yellow')">黃色毛帽</button>
+      <button onclick="changeClothing('hat', 'purple')">紫色棒领帽</button>
+      <button onclick="changeClothing('hat', 'none')">無帽子</button>
+    </div>
+  </div>
+
+  <script>
+    function changeClothing(type, color) {
+      const element = document.getElementById(type);
+      if (color === 'none') {
+        element.style.backgroundColor = 'transparent';
+      } else {
+        element.style.backgroundColor = color;
+      }
+    }
+  </script>
 </body>
 </html>
