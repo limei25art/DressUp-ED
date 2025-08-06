@@ -1,21 +1,263 @@
 <!DOCTYPE html>
-<html lang="zh-TW">
+<html lang="zh-Hant">
 <head>
     <meta charset="UTF-8">
-    <title>我的 GitHub Pages 網站</title>
-    <style>
-        body {
-            font-family: Arial, sans-serif;
-            text-align: center;
-            background-color: #f4f4f4;
-        }
-        h1 {
-            color: #2c3e50;
-        }
-    </style>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>男性角色換裝遊戲</title>
+    <link href="css/style.css" rel="stylesheet">
+    <link href="css/mobile.css" rel="stylesheet">
+     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
 </head>
 <body>
-    <h1>歡迎來到我的網站！</h1>
-    <p>這是由 GitHub Pages 託管的簡單網頁。</p>
+    <div id="wrap">
+          <button id="save-button">Save</button>
+        <input type="radio" name="tab-menu" id="tab1" checked>
+        <input type="radio" name="tab-menu" id="tab2">
+        <input type="radio" name="tab-menu" id="tab3">
+        <input type="radio" name="tab-menu" id="tab4">
+        <input type="radio" name="tab-menu" id="tab5">
+        <div class="tabBox">
+            <label for="tab1">髮型</label>
+            <label for="tab2">上衣</label>
+            <label for="tab3">下裝</label>
+            <label for="tab4">鞋履</label>
+            <label for="tab5">配件</label>
+        </div>
+        <!-- 髮型 -->
+        <div class="item hair">
+            <label for="hair1"><img src="images/hair1.png"></label>
+            <label for="hair2"><img src="images/hair2.png"></label>
+            <label for="hair3"><img src="images/hair3.png"></label>
+            <label for="hair4"><img src="images/hair4.png"></label>
+            <label for="hair5"><img src="images/hair5.png"></label>
+        </div><!--item hair-->
+        <!-- 髮型1 -->
+        <input type="radio" name="item-hair" id="hair1">
+        <label for="hair1" class="on on_hair1">
+         <iframe id="youtube-player" src="https://www.youtube.com/embed/VIDEO_ID" frameborder="0"></iframe>
+
+       
+        </label>
+        <!-- 髮型2 -->
+        <input type="radio" name="item-hair" id="hair2"> 
+        <label for="hair2" class="on on_hair2"></label>
+        <!-- 髮型3 -->
+        <input type="radio" name="item-hair" id="hair3">
+        <label for="hair3" class="on on_hair3"></label>
+        <!-- 髮型4 -->
+        <input type="radio" name="item-hair" id="hair4">
+        <label for="hair4" class="on on_hair4"></label>
+        <!-- 髮型5 -->
+        <input type="radio" name="item-hair" id="hair5" checked>
+        <label for="hair5" class="on on_hair5"></label>
+        <!-- 髮型 技巧 -->
+
+        <!-- 上衣 -->
+        <div class="item top">
+            <label for="top1"><img src="images/top_i1.png"></label>
+            <label for="top2"><img src="images/top_i2.png"></label>
+            <label for="top3"><img src="images/top_i3.png"></label>
+            <label for="top4"><img src="images/top_i4.png"></label>
+            <label for="top5"><img src="images/top_i5.png"></label>
+            <label for="top6"><img src="images/top_i6.png"></label>
+            <label for="top7"><img src="images/top_i7.png"></label>
+            <label for="top8"><img src="images/top_i8.png"></label>
+        </div><!--item top-->
+        <!-- **上衣8 -->
+        <input type="checkbox" name="item-top" id="top8">
+        <label for="top8" class="on on_top8"></label>
+        <!-- 上衣1 -->
+        <input type="checkbox" name="item-top" id="top1">
+        <label for="top1" class="on on_top1"></label>
+        <!-- 上衣2 -->
+        <input type="checkbox" name="item-top" id="top2">
+        <label for="top2" class="on on_top2"></label>
+        <!-- 上衣3 -->
+        <input type="checkbox" name="item-top" id="top3">
+        <label for="top3" class="on on_top3"></label>
+        <!-- 上衣4 -->
+        <input type="checkbox" name="item-top" id="top4">
+        <label for="top4" class="on on_top4"></label>
+        <!-- 上衣5 -->
+        <input type="checkbox" name="item-top" id="top5">
+        <label for="top5" class="on on_top5"></label>
+        <!-- 上衣6 -->
+        <input type="checkbox" name="item-top" id="top6">
+        <label for="top6" class="on on_top6"></label>
+        <!-- 上衣7 -->
+        <input type="checkbox" name="item-top" id="top7">
+        <label for="top7" class="on on_top7"></label>
+        <!-- 上衣 技巧 -->
+
+        <!-- 下裝 -->
+        <div class="item bottom">
+            <label for="bottom1"><img src="images/bttm_i1.png"></label>
+            <label for="bottom2"><img src="images/bttm_i2.png"></label>
+            <label for="bottom3"><img src="images/bttm_i3.png"></label>
+            <label for="bottom4"><img src="images/bttm_i4.png"></label>
+            <label for="bottom5"><img src="images/bttm_i5.png"></label>
+            <label for="bottom6"><img src="images/bttm_i6.png"></label>
+            <label for="bottom7"><img src="images/bttm_i7.png"></label>
+        </div><!-- item bottom -->
+        <!-- 下裝1 -->
+        <input type="radio" name="item-bottom" id="bottom1">
+        <label for="bottom1" class="on on_bottom1"></label>
+        <!-- 下裝2 -->
+        <input type="radio" name="item-bottom" id="bottom2">
+        <label for="bottom2" class="on on_bottom2"></label>
+        <!-- 下裝3 -->
+        <input type="radio" name="item-bottom" id="bottom3">
+        <label for="bottom3" class="on on_bottom3"></label>
+        <!-- 下裝4 -->
+        <input type="radio" name="item-bottom" id="bottom4">
+        <label for="bottom4" class="on on_bottom4"></label>
+        <!-- 下裝5 -->
+        <input type="radio" name="item-bottom" id="bottom5">
+        <label for="bottom5" class="on on_bottom5"></label>
+        <!-- 下裝6 -->
+        <input type="radio" name="item-bottom" id="bottom6">
+        <label for="bottom6" class="on on_bottom6"></label>
+        <!-- 下裝7 -->
+        <input type="radio" name="item-bottom" id="bottom7">
+        <label for="bottom7" class="on on_bottom7"></label>
+        <!-- 下裝 技巧 -->
+
+        <!-- 鞋履 -->
+        <div class="item shoes">
+            <label for="shoes1"><img src="images/shoes_i1.png"></label>
+            <label for="shoes2"><img src="images/shoes_i2.png"></label>
+            <label for="shoes3"><img src="images/shoes_i3.png"></label>
+            <label for="shoes4"><img src="images/shoes_i4.png"></label>
+            <label for="shoes5"><img src="images/shoes_i5.png"></label>
+            <label for="shoes6"><img src="images/shoes_i6.png"></label>
+            <label for="shoes7"><img src="images/shoes_i7.png"></label>
+        </div><!-- item shoes -->
+        <!-- 鞋履1 -->
+        <input type="radio" name="item-shoes" id="shoes1">
+        <label for="shoes1" class="on on_shoes1"></label>
+        <!-- 鞋履2 -->
+        <input type="radio" name="item-shoes" id="shoes2">
+        <label for="shoes2" class="on on_shoes2"></label>
+        <!-- 鞋履3 -->
+        <input type="checkbox" name="item-shoes" id="shoes3">
+        <label for="shoes3" class="on on_shoes3"></label>
+        <!-- 鞋履4 -->
+        <input type="radio" name="item-shoes" id="shoes4">
+        <label for="shoes4" class="on on_shoes4"></label>
+        <!-- 鞋履5 -->
+        <input type="radio" name="item-shoes" id="shoes5">
+        <label for="shoes5" class="on on_shoes5"></label>
+        <!-- 鞋履6 -->
+        <input type="radio" name="item-shoes" id="shoes6">
+        <label for="shoes6" class="on on_shoes6"></label>
+        <!-- 鞋履7 -->
+        <input type="radio" name="item-shoes" id="shoes7">
+        <label for="shoes7" class="on on_shoes7"></label>
+        <!-- 鞋履 技巧 -->
+
+        <!-- 配件 -->
+        <div class="item acc">
+            <label for="acc1"><img src="images/acc_i1.png"></label>
+            <label for="acc2"><img src="images/acc_i2.png"></label>
+            <label for="acc3"><img src="images/acc_i3.png"></label>
+            <label for="acc4"><img src="images/acc_i4.png"></label>
+            <label for="acc5"><img src="images/acc_i5.png"></label>
+            <label for="acc6"><img src="images/acc_i6.png"></label>
+            <label for="acc7"><img src="images/acc_i7.png"></label>
+            <label for="acc8"><img src="images/acc_i8.png"></label>
+            <label for="acc9"><img src="images/acc_i9.png"></label>
+            <label for="acc10"><img src="images/acc_i10.png"></label>
+        </div><!-- item acc -->
+        <!-- 配件1 -->
+        <input type="checkbox" name="item-acc" id="acc1">
+        <label for="acc1" class="on on_acc1"></label>
+        <!-- 配件2 -->
+        <input type="checkbox" name="item-acc" id="acc2">
+        <label for="acc2" class="on on_acc2"></label>
+        <!-- 配件3 -->
+        <input type="checkbox" name="item-acc" id="acc3">
+        <label for="acc3" class="on on_acc3"></label>
+        <!-- 配件4 -->
+        <input type="checkbox" name="item-acc" id="acc4">
+        <label for="acc4" class="on on_acc4"></label>
+        <!-- 配件5 -->
+        <input type="checkbox" name="item-acc" id="acc5">
+        <label for="acc5" class="on on_acc5"></label>
+        <!-- 配件6 -->
+        <input type="checkbox" name="item-acc" id="acc6">
+        <label for="acc6" class="on on_acc6"></label>
+        <!-- 配件7 -->
+        <input type="checkbox" name="item-acc" id="acc7">
+        <label for="acc7" class="on on_acc7"></label>
+        <!-- 配件8 -->
+        <input type="checkbox" name="item-acc" id="acc8">
+        <label for="acc8" class="on on_acc8"></label>
+        <!-- 配件9 -->
+        <input type="checkbox" name="item-acc" id="acc9">
+        <label for="acc9" class="on on_acc9"></label>
+        <!-- 配件10 -->
+        <input type="checkbox" name="item-acc" id="acc10">
+        <label for="acc10" class="on on_acc10"></label>
+        <!-- 鞋履 技巧-->
+
+
+                      
+
+    </div><!--#wrap-->
+     <!-- Footer Navigation -->
+    <div>
+    <div id="footer" style="background-color:#FFA500;text-align:center;">
+        <h6><a>UNOFFICIALA.FANART BY LI_MEI.ART</a></h6>
+        <span><a href="#home">首页</a></span> |
+        <span><a href="#news">新闻</a></span> |
+        <span><a href="#contact">联系我们</a></span> |
+        <span><a href="https://www.instagram.com/li_mei.art/?hl=en">关于</a></span>
+    </div>
+    <script>
+        document.getElementById('save-button').addEventListener('click', function() {
+            // 隱藏不必要的元素
+            const youtubePlayer = document.getElementById('youtube-player');
+            const saveButton = document.getElementById('save-button');
+            const tabBox = document.querySelector('.tabBox');
+            const items = document.querySelectorAll('.item');
+            youtubePlayer.style.display = 'none';
+            saveButton.style.display = 'none';
+            tabBox.style.display = 'none';
+            items.forEach(item => item.style.display = 'none');
+
+            // 使用 html2canvas 捕獲 #wrap
+            html2canvas(document.getElementById('wrap'), {
+                useCORS: true,
+                scale: 2 // 提高圖片質量
+            }).then(canvas => {
+                // 恢復隱藏的元素
+                youtubePlayer.style.display = 'block';
+                saveButton.style.display = 'block';
+                tabBox.style.display = 'flex';
+                items.forEach(item => {
+                    if (item.classList.contains(document.querySelector('input[name="tab"]:checked')?.id)) {
+                        item.style.display = 'flex';
+                    }
+                });
+
+                // 生成並下載圖片
+                const link = document.createElement('a');
+                link.download = 'outfit.png';
+                link.href = canvas.toDataURL('image/png');
+                link.click();
+            }).catch(error => {
+                console.error('截圖失敗:', error);
+                // 恢復隱藏的元素
+                youtubePlayer.style.display = 'block';
+                saveButton.style.display = 'block';
+                tabBox.style.display = 'flex';
+                items.forEach(item => {
+                    if (item.classList.contains(document.querySelector('input[name="tab"]:checked')?.id)) {
+                        item.style.display = 'flex';
+                    }
+                });
+            });
+        });
+    </script>
 </body>
 </html>
