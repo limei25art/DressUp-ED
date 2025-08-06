@@ -1,0 +1,17 @@
+@media all and (min-width: 320px) {
+    #wrap {
+        width: 90%;
+    }
+    .item {
+        overflow-x: scroll;
+    }
+    .item::-webkit-scrollbar {
+        background-color: rgba(0,0,0,.2);
+        height: 5px;
+    }
+    .item::-webkit-scrollbar-thumb {
+        height: 5px;
+        border-radius: 100px;
+        background-color:#905b3f;
+    }
+}
