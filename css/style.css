@@ -10,7 +10,7 @@
     font-family: 'CookieRun\ Bold.otf';
 }
 body {
-    background: url('../images/bg_img.png') no-repeat center / cover, burlywood;
+    background: url('../images/bgimg.png') no-repeat center / cover, burlywood;
 }
 #youtube-player {
     position: absolute;
@@ -24,12 +24,12 @@ body {
 /* Save 按鈕樣式 */
 #save-button {
     position: absolute;
-    bottom: 120px; /* 放置在選項卡上方 */
-    left: 50%;
-    transform: translateX(-50%);
+    bottom: 150px; /* 放置在選項卡上方 */
+    left: 80%;
+    //transform: translateX(-50%);
     padding: 8px 20px;
     background-color: rgba(255, 255, 255, .5);
-    border: 3px solid burlywood;
+    border: 3px LightSeaGreen;
     border-radius: 15px;
     color: #905b3f;
     font-family: 'CookieRun\ Bold';
@@ -38,15 +38,15 @@ body {
     z-index: 999;
 }
 #save-button:hover {
-    background-color: burlywood;
+    background-color: LightSeaGreen;
 }
 #wrap {
     position: relative;
     max-width: 900px;
-    height: 900px;
+    height: 800px;
     border: 3px solid burlywood;
     border-radius: 50px;
-    margin: 150px auto 50px;
+    margin: 30px auto 100px;
     backdrop-filter: blur(7px);
     background-color: rgba(255, 255, 255, .5);
     background-image: url('../images/main.png');
@@ -78,7 +78,7 @@ input {
     border-radius: 15px 1px 0 0;
     box-sizing: border-box;
     z-index: 999;
-    color: #905b3f;
+    color: #477994;
     cursor: pointer;
 }
 
@@ -176,13 +176,15 @@ input {
 #tab2:checked ~ .tabBox > label[for="tab2"],
 #tab3:checked ~ .tabBox > label[for="tab3"],
 #tab4:checked ~ .tabBox > label[for="tab4"],
-#tab5:checked ~ .tabBox > label[for="tab5"] {background-color: burlywood;}
+#tab5:checked ~ .tabBox > label[for="tab5"],
+#tab6:checked ~ .tabBox > label[for="tab6"] {background-color: LightSeaGreen ;}
 
 #tab1:checked ~ .hair,
 #tab2:checked ~ .top,
 #tab3:checked ~ .bottom,
 #tab4:checked ~ .shoes,
-#tab5:checked ~ .acc {display: flex;background-color: burlywood;}
+#tab5:checked ~ .acc,
+#tab6:checked ~ .bg {display: flex;background-color: LightSeaGreen ;}
 
 /* 點擊頭部 */
 input[name="item-hair"]:checked + .on {display: block;}
@@ -194,3 +196,5 @@ input[name="item-bottom"]:checked + .on {display: block;}
 input[name="item-shoes"]:checked + .on {display: block;}
 /* 配件部分 頭部 */
 input[name="item-acc"]:checked + .on {display: block;}
+/* BG部分 頭部 */
+input[name="item-BG"]:checked + .on {display: block;}
