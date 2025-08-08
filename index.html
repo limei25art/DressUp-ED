@@ -11,20 +11,53 @@
 <body>
     <div id="wrap">
           <button id="save-button">Save</button>
-        <input type="radio" name="tab-menu" id="tab1" checked>
+        <input type="radio" name="tab-menu" id="tab1" >
         <input type="radio" name="tab-menu" id="tab2">
         <input type="radio" name="tab-menu" id="tab3">
-        <input type="radio" name="tab-menu" id="tab4">
+        <input type="radio" name="tab-menu" id="tab4"checked>
         <input type="radio" name="tab-menu" id="tab5">
         <input type="radio" name="tab-menu" id="tab6">
         <div class="tabBox">
+            <label for="tab4">表情</label>
             <label for="tab1">髮型</label>
             <label for="tab2">上衣</label>
             <label for="tab3">下裝</label>
-            <label for="tab4">鞋履</label>
             <label for="tab5">配件</label>
             <label for="tab6">BG</label>
         </div>
+        <!-- 表情 -->
+        <div class="item shoes">
+            <label for="shoes1"><img src="images/shoes_i1.png"></label>
+            <label for="shoes2"><img src="images/shoes_i2.png"></label>
+            <label for="shoes3"><img src="images/shoes_i3.png"></label>
+            <label for="shoes4"><img src="images/shoes_i4.png"></label>
+            <label for="shoes5"><img src="images/shoes_i5.png"></label>
+            <label for="shoes6"><img src="images/shoes_i6.png"></label>
+            <label for="shoes7"><img src="images/shoes_i7.png"></label>
+        </div><!-- item shoes -->
+        <!-- 表情1 -->
+        <input type="radio" name="item-shoes" id="shoes1"checked>
+        <label for="shoes1" class="on on_shoes1"></label>
+        <!-- 表情2 -->
+        <input type="radio" name="item-shoes" id="shoes2">
+        <label for="shoes2" class="on on_shoes2"></label>
+        <!-- 表情3 -->
+        <input type="checkbox" name="item-shoes" id="shoes3">
+        <label for="shoes3" class="on on_shoes3"></label>
+        <!-- 表情4 -->
+        <input type="radio" name="item-shoes" id="shoes4">
+        <label for="shoes4" class="on on_shoes4"></label>
+        <!-- 表情5 -->
+        <input type="radio" name="item-shoes" id="shoes5">
+        <label for="shoes5" class="on on_shoes5"></label>
+        <!-- 表情6 -->
+        <input type="radio" name="item-shoes" id="shoes6">
+        <label for="shoes6" class="on on_shoes6"></label>
+        <!-- 表情7 -->
+        <input type="radio" name="item-shoes" id="shoes7">
+        <label for="shoes7" class="on on_shoes7"></label>
+        <!-- 表情 技巧 -->
+
         <!-- 髮型 -->
         <div class="item hair">
             <label for="hair1"><img src="images/hair1.png"></label>
@@ -68,7 +101,9 @@
         <label for="top8" class="on on_top8"></label>
         <!-- 上衣1 -->
         <input type="checkbox" name="item-top" id="top1">
-        <label for="top1" class="on on_top1"></label>
+        <label for="top1" class="on on_top1">
+        <iframe id="youtube-player" src="https://www.youtube.com/embed/J6nmZUNWJfE?si=sKiECm-KHVqp3ybB" frameborder="0"></iframe>
+        </label> 
         <!-- 上衣2 -->
         <input type="checkbox" name="item-top" id="top2">
         <label for="top2" class="on on_top2"></label>
@@ -122,39 +157,6 @@
         <label for="bottom7" class="on on_bottom7"></label>
         <!-- 下裝 技巧 -->
 
-        <!-- 鞋履 -->
-        <div class="item shoes">
-            <label for="shoes1"><img src="images/shoes_i1.png"></label>
-            <label for="shoes2"><img src="images/shoes_i2.png"></label>
-            <label for="shoes3"><img src="images/shoes_i3.png"></label>
-            <label for="shoes4"><img src="images/shoes_i4.png"></label>
-            <label for="shoes5"><img src="images/shoes_i5.png"></label>
-            <label for="shoes6"><img src="images/shoes_i6.png"></label>
-            <label for="shoes7"><img src="images/shoes_i7.png"></label>
-        </div><!-- item shoes -->
-        <!-- 鞋履1 -->
-        <input type="radio" name="item-shoes" id="shoes1">
-        <label for="shoes1" class="on on_shoes1"></label>
-        <!-- 鞋履2 -->
-        <input type="radio" name="item-shoes" id="shoes2">
-        <label for="shoes2" class="on on_shoes2"></label>
-        <!-- 鞋履3 -->
-        <input type="checkbox" name="item-shoes" id="shoes3">
-        <label for="shoes3" class="on on_shoes3"></label>
-        <!-- 鞋履4 -->
-        <input type="radio" name="item-shoes" id="shoes4">
-        <label for="shoes4" class="on on_shoes4"></label>
-        <!-- 鞋履5 -->
-        <input type="radio" name="item-shoes" id="shoes5">
-        <label for="shoes5" class="on on_shoes5"></label>
-        <!-- 鞋履6 -->
-        <input type="radio" name="item-shoes" id="shoes6">
-        <label for="shoes6" class="on on_shoes6"></label>
-        <!-- 鞋履7 -->
-        <input type="radio" name="item-shoes" id="shoes7">
-        <label for="shoes7" class="on on_shoes7"></label>
-        <!-- 鞋履 技巧 -->
-
         <!-- 配件 -->
         <div class="item acc">
             <label for="acc1"><img src="images/acc_i1.png"></label>
@@ -198,7 +200,7 @@
         <!-- 配件10 -->
         <input type="checkbox" name="item-acc" id="acc10">
         <label for="acc10" class="on on_acc10"></label>
-        <!-- 鞋履 技巧-->
+        <!-- 表情 技巧-->
    <!-- bg -->
         <div class="item bg">
             <label for="acc1"><img src="images/acc_i1.png"></label>
@@ -242,46 +244,45 @@
         <!-- 配件10 -->
         <input type="checkbox" name="item-acc" id="acc10">
         <label for="acc10" class="on on_acc10"></label>
-        <!-- 鞋履 技巧-->
+        <!-- 表情 技巧-->
 
-                      
+    
 
-    </div><!--#wrap-->
-     <!-- Footer Navigation -->
-    <div>
-    <div id="footer" style="background-color:#FFA500;text-align:center;">
-        <h6><a>UNOFFICIALA.FANART BY LI_MEI.ART</a></h6>
-        <span><a href="#home">首页</a></span> |
-        <span><a href="#news">新闻</a></span> |
-        <span><a href="#contact">联系我们</a></span> |
-        <span><a href="https://www.instagram.com/li_mei.art/?hl=en">关于</a></span>
-    </div>
-    <script>
+       <script>
+        // 點擊 Save 按鈕時執行截圖
         document.getElementById('save-button').addEventListener('click', function() {
+            // 記錄當前選中的選項卡，默認為 tab1
+            const selectedTab = document.querySelector('input[name="tab"]:checked')?.id || 'tab1';
+
             // 隱藏不必要的元素
             const youtubePlayer = document.getElementById('youtube-player');
             const saveButton = document.getElementById('save-button');
             const tabBox = document.querySelector('.tabBox');
             const items = document.querySelectorAll('.item');
-            youtubePlayer.style.display = 'none';
-            saveButton.style.display = 'none';
-            tabBox.style.display = 'none';
-            items.forEach(item => item.style.display = 'none');
+            youtubePlayer.classList.add('hidden');
+            saveButton.classList.add('hidden');
+            tabBox.classList.add('hidden');
+            items.forEach(item => item.classList.add('hidden'));
 
             // 使用 html2canvas 捕獲 #wrap
             html2canvas(document.getElementById('wrap'), {
                 useCORS: true,
-                scale: 2 // 提高圖片質量
+                scale: 2
             }).then(canvas => {
                 // 恢復隱藏的元素
-                youtubePlayer.style.display = 'block';
-                saveButton.style.display = 'block';
-                tabBox.style.display = 'flex';
-                items.forEach(item => {
-                    if (item.classList.contains(document.querySelector('input[name="tab"]:checked')?.id)) {
-                        item.style.display = 'flex';
-                    }
-                });
+                youtubePlayer.classList.remove('hidden');
+                saveButton.classList.remove('hidden');
+                tabBox.classList.remove('hidden');
+                items.forEach(item => item.classList.remove('hidden'));
+
+                // 強制恢復選項卡狀態並觸發 CSS 更新
+                document.getElementById(selectedTab).checked = true;
+
+                // 強制重繪以確保 UI 更新
+                document.getElementById('wrap').style.display = 'none';
+                setTimeout(() => {
+                    document.getElementById('wrap').style.display = 'block';
+                }, 0);
 
                 // 生成並下載圖片
                 const link = document.createElement('a');
@@ -291,16 +292,31 @@
             }).catch(error => {
                 console.error('截圖失敗:', error);
                 // 恢復隱藏的元素
-                youtubePlayer.style.display = 'block';
-                saveButton.style.display = 'block';
-                tabBox.style.display = 'flex';
-                items.forEach(item => {
-                    if (item.classList.contains(document.querySelector('input[name="tab"]:checked')?.id)) {
-                        item.style.display = 'flex';
-                    }
-                });
+                youtubePlayer.classList.remove('hidden');
+                saveButton.classList.remove('hidden');
+                tabBox.classList.remove('hidden');
+                items.forEach(item => item.classList.remove('hidden'));
+
+                // 強制恢復選項卡狀態並觸發 CSS 更新
+                document.getElementById(selectedTab).checked = true;
+
+                // 強制重繪
+                document.getElementById('wrap').style.display = 'none';
+                setTimeout(() => {
+                    document.getElementById('wrap').style.display = 'block';
+                }, 0);
             });
         });
     </script>
 </body>
+</div><!--#wrap-->
+     <!-- Footer Navigation -->
+    <div>
+    <div id="footer" style="background-color:#607d99;text-align:center;">
+        <h6><a><p style="color:#3c5f82">UNOFFICIALA.FANART BY LI_MEI.ART</a></h6>
+        <span><a href="#home"target="_blank"style="color: #3c5f82;">首页</a></span> |
+        <span><a href="#news"target="_blank"style="color: #3c5f82;">新闻</a></span> |
+        <span><a href="https://linktr.ee/li_mei25"target="_blank"style="color: #3c5f82;">linktree</a></span> |
+        <span><a href="https://www.instagram.com/li_mei.art/?hl=en"target="_blank"style="color: #3c5f82;">IG</a></span>
+    </div>
 </html>
