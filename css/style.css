@@ -202,6 +202,11 @@ input {
 .on_acc8 {background-image: url('../images/acc8.png'); z-index: 1;}
 .on_acc9 {background-image: url('../images/acc9.png'); z-index: 9;}
 .on_acc10 {background-image: url('../images/acc10.png'); z-index: 1;}
+.on_acc11 {background-image: url('../images/acc11.png'); z-index: 1;}
+.on_acc12 {background-image: url('../images/acc12.png'); z-index: 1;}
+.on_acc13 {background-image: url('../images/acc13.png'); z-index: 1;}
+.on_acc14 {background-image: url('../images/acc14.png'); z-index: 1;}
+.on_acc15 {background-image: url('../images/acc15.png'); z-index: 1;}
 
 /* 點選標籤選單 */
 #tab1:checked ~ .tabBox > label[for="tab1"],
