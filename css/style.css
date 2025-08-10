@@ -154,7 +154,7 @@ input {
 
 
 /* 頭 on */
-.on_hair1 {background-image: url('../images/hair1.png');z-index: 10}
+.on_hair1 {background-image: url('../images/hair1.png');}
 .on_hair2 {background-image: url('../images/hair2.png');}
 .on_hair3 {background-image: url('../images/hair3.png');}
 .on_hair4 {background-image: url('../images/hair4.png');}
@@ -164,13 +164,13 @@ input {
 .on_hair8 {background-image: url('../images/hair8.png');}
 .on_hair9 {background-image: url('../images/hair9.png');}
 /* 上衣 on */
-.on_top1 {background-image: url('../images/top1.png');z-index: 9}
-.on_top2 {background-image: url('../images/top2.png');z-index: 9}
-.on_top3 {background-image: url('../images/top3.png');z-index: 9}
-.on_top4 {background-image: url('../images/top4.png'); z-index: 9;}
-.on_top5 {background-image: url('../images/top5.png'); z-index: 9;}
-.on_top6 {background-image: url('../images/top6.png'); z-index: 9;}
-.on_top7 {background-image: url('../images/top7.png'); z-index: 9;}
+.on_top1 {background-image: url('../images/top1.png');z-index: 10}
+.on_top2 {background-image: url('../images/top2.png');z-index: 10}
+.on_top3 {background-image: url('../images/top3.png');z-index: 10}
+.on_top4 {background-image: url('../images/top4.png'); z-index: 10;}
+.on_top5 {background-image: url('../images/top5.png'); z-index: 10;}
+.on_top6 {background-image: url('../images/top6.png'); z-index: 10;}
+.on_top7 {background-image: url('../images/top7.png'); z-index: 10;}
 .on_top8 {background-image: url('../images/top8.png');}
 
 /* 下裝 on */
@@ -194,7 +194,7 @@ input {
 /* 配件 on */
 .on_acc1 {background-image: url('../images/acc1.png'); z-index: 9;}
 .on_acc2 {background-image: url('../images/acc2.png'); z-index: 9;}
-.on_acc3 {background-image: url('../images/acc3.png'); z-index: 1; z-index: 7;}
+.on_acc3 {background-image: url('../images/acc3.png'); z-index: 7;}
 .on_acc4 {background-image: url('../images/acc4.png'); z-index: 9;}
 .on_acc5 {background-image: url('../images/acc5.png'); z-index: 1;}
 .on_acc6 {background-image: url('../images/acc6.png'); z-index: 9;}
