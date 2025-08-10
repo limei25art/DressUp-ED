@@ -27,7 +27,7 @@ html, body {
     left: 50%;
     transform: translateX(-50%);
     width: 248px;
-    height: 140px; /* 修改高度 */
+    height: 40px; /* 修改高度 */
     z-index: 999999;
 }
 /* Save 按鈕樣式 */
