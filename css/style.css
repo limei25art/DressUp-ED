@@ -171,13 +171,13 @@ input {
 .on_top8 {background-image: url('../images/top8.png');}
 
 /* 下裝 on */
-.on_bottom1 {background-image: url('../images/bottom1.png'); z-index: 5;}
-.on_bottom2 {background-image: url('../images/bottom2.png'); z-index: 5;}
-.on_bottom3 {background-image: url('../images/bottom3.png'); z-index: 5;}
-.on_bottom4 {background-image: url('../images/bottom4.png'); z-index: 5;}
-.on_bottom5 {background-image: url('../images/bottom5.png'); z-index: 5;}
-.on_bottom6 {background-image: url('../images/bottom6.png'); z-index: 5;}
-.on_bottom7 {background-image: url('../images/bottom7.png'); z-index: 5;}
+.on_bottom1 {background-image: url('../images/bottom1.png'); z-index: 2;}
+.on_bottom2 {background-image: url('../images/bottom2.png'); z-index: 2;}
+.on_bottom3 {background-image: url('../images/bottom3.png'); z-index: 2;}
+.on_bottom4 {background-image: url('../images/bottom4.png'); z-index: 2;}
+.on_bottom5 {background-image: url('../images/bottom5.png'); z-index: 2;}
+.on_bottom6 {background-image: url('../images/bottom6.png'); z-index: 2;}
+.on_bottom7 {background-image: url('../images/bottom7.png'); z-index: 2;}
 
 /* 表情 on */
 .on_shoes1 {background-image: url('../images/shoes1.png'); z-index: 7;}
