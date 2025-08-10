@@ -159,7 +159,10 @@ input {
 .on_hair3 {background-image: url('../images/hair3.png');}
 .on_hair4 {background-image: url('../images/hair4.png');}
 .on_hair5 {background-image: url('../images/hair5.png');}
-
+.on_hair6 {background-image: url('../images/hair6.png');}
+.on_hair7 {background-image: url('../images/hair7.png');}
+.on_hair8 {background-image: url('../images/hair8.png');}
+.on_hair9 {background-image: url('../images/hair9.png');}
 /* 上衣 on */
 .on_top1 {background-image: url('../images/top1.png');z-index: 9}
 .on_top2 {background-image: url('../images/top2.png');z-index: 9}
