@@ -161,9 +161,9 @@ input {
 .on_hair5 {background-image: url('../images/hair5.png');}
 
 /* 上衣 on */
-.on_top1 {background-image: url('../images/top1.png');}
-.on_top2 {background-image: url('../images/top2.png');}
-.on_top3 {background-image: url('../images/top3.png');}
+.on_top1 {background-image: url('../images/top1.png');z-index: 9}
+.on_top2 {background-image: url('../images/top2.png');z-index: 9}
+.on_top3 {background-image: url('../images/top3.png');z-index: 9}
 .on_top4 {background-image: url('../images/top4.png'); z-index: 9;}
 .on_top5 {background-image: url('../images/top5.png'); z-index: 9;}
 .on_top6 {background-image: url('../images/top6.png'); z-index: 9;}
