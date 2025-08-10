@@ -192,7 +192,7 @@ input {
 .on_shoes7 {background-image: url('../images/shoes7.png'); z-index: 7;}
 
 /* 配件 on */
-.on_acc1 {background-image: url('../images/acc1.png'); z-index: 9;}
+.on_acc1 {background-image: url('../images/acc1.png'); z-index: 7;}
 .on_acc2 {background-image: url('../images/acc2.png'); z-index: 9;}
 .on_acc3 {background-image: url('../images/acc3.png'); z-index: 7;}
 .on_acc4 {background-image: url('../images/acc4.png'); z-index: 9;}
@@ -202,7 +202,7 @@ input {
 .on_acc8 {background-image: url('../images/acc8.png'); z-index: 9;}
 .on_acc9 {background-image: url('../images/acc9.png'); z-index: 9;}
 .on_acc10 {background-image: url('../images/acc10.png'); z-index: 9;}
-.on_acc11 {background-image: url('../images/acc11.png'); z-index: 9;}
+.on_acc11 {background-image: url('../images/acc11.png'); z-index: 7;}
 .on_acc12 {background-image: url('../images/acc12.png'); z-index: 9;}
 .on_acc13 {background-image: url('../images/acc13.png'); z-index: 9;}
 .on_acc14 {background-image: url('../images/acc14.png'); z-index: 9;}
