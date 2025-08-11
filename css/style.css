@@ -105,7 +105,19 @@ input {
     color: #34586b;
     cursor: pointer;
 }
-
+.aaaa
+{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 550px;
+    height: 550px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 550px;
+    z-index: 1;
+  
 /* 選項卡選單內容 */
 .item {
     display: none;
