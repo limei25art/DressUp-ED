@@ -117,7 +117,8 @@ input {
     background-position: center;
     background-size: 550px;
     z-index: 1;
-  
+   
+}
 /* 選項卡選單內容 */
 .item {
     display: none;
