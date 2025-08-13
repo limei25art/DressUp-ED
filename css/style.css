@@ -10,7 +10,7 @@
     font-family: 'CookieRun\ Bold.otf';
 }
 html, body {
-  height: 100%;           /* 讓 body 及 html 滿高 */
+  height:800px;           /* 讓 body 及 html 滿高 */
   margin: 0;
   padding: 0;
   display: flex;
