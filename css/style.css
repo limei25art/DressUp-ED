@@ -42,10 +42,10 @@ html, body {
 /* Save 按鈕樣式 */
 #save-button {
     position: absolute;
-    bottom: 150px; /* 放置在選項卡上方 */
+    bottom: 120px; /* 放置在選項卡上方 */
     left: 75%;
     //transform: translateX(-50%);
-    padding:4px 20px;
+    padding:4px 15px;
     background-color: rgba(28, 74, 131, .8);
     border: 3px solid rgba(28, 75, 131, .5);
     border-radius: 15px;
@@ -65,7 +65,7 @@ html, body {
   margin: 5px auto 10px;
   height: auto;          /* 不需要固定高度 */
   border: 3px solid rgba(28, 74, 131,.8);
-  border-radius: 50px;
+  border-radius: 45px;
   backdrop-filter: blur(7px);
   background-color: rgba(255, 255, 255, .2);
   //background-image: url('../images/main.png');
@@ -73,20 +73,20 @@ html, body {
   background-position: center;
   background-size: 550px;
   overflow: hidden;
-  box-shadow: 2px 5px 20px rgba(0,0,0,.5);
+  box-shadow: 2px 5px 10px rgba(28, 74, 131,.5);
 }
 
  #footer {
   //flex-shrink: 0;        /* 防止 footer 被壓縮 */
   width: 100%;
-  background: rgba(28, 74, 131, .5);
+  background: rgba(28, 74, 131, 1);
   text-align: center;
-  padding: 8px 0;
-  border-radius: 100px 100px 0 0;
-  font-size: 16px;
+  padding: 3px 0;
+  border-radius: 0px 0px 0 0;
+  font-size: 8px;
   color: #ffffff;
   //border-top: 2px solid #eee;
-  box-shadow: 0 -2px 10px rgba(0,0,0,0.08);
+  box-shadow: 0 -2px 5px rgba(0,0,0,.5);
   z-index: 1000;
   //position: relative;    /* 不要用 fixed，避免蓋內容 */
 }
@@ -147,9 +147,10 @@ input {
 
 }
 .item > label img {
-    height: 100%;
+    height: 95%;
     padding: 2px;
-    background-color: rgba(255, 255, 255, .2);
+    margin: 2px 5px 5px 5px;
+    background-color: rgba(28, 74, 131, .2);
     border: 2px solid rgba(28, 74, 131, .5);
     border-radius: 25px;
     box-sizing: border-box;
@@ -262,14 +263,14 @@ input {
 #tab3:checked ~ .tabBox > label[for="tab3"],
 #tab4:checked ~ .tabBox > label[for="tab4"],
 #tab5:checked ~ .tabBox > label[for="tab5"],
-#tab6:checked ~ .tabBox > label[for="tab6"] {background-color: rgba(48, 168, 194, .5)  ;}
+#tab6:checked ~ .tabBox > label[for="tab6"] {background-color: rgba(48, 168, 194, .8)  ;}
 
 #tab1:checked ~ .hair,
 #tab2:checked ~ .top,
 #tab3:checked ~ .bottom,
 #tab4:checked ~ .emoji,
 #tab5:checked ~ .acc_A,
-#tab6:checked ~ .acc_B {display: flex;background-color: rgba(48, 168, 194,.5)  ;}
+#tab6:checked ~ .acc_B {display: flex;background-color: rgba(48, 168, 194,.8)  ;}
 
 /* 點擊頭部 */
 input[name="item-hair"]:checked + .on {display: block;}
