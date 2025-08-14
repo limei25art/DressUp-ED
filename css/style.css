@@ -268,9 +268,9 @@ input {
 #tab6:checked ~ .tabBox > label[for="tab6"] {background-color: rgba(48, 168, 194, .8)  ;}
 
 #tab1:checked ~ .hair,
-#tab2:checked ~ .top,
-#tab3:checked ~ .bottom,
-#tab4:checked ~ .emoji,
+#tab2:checked ~ .emoji,
+#tab3:checked ~ .top,
+#tab4:checked ~ .bottom,
 #tab5:checked ~ .acc_A,
 #tab6:checked ~ .acc_B {display: flex;background-color: rgba(48, 168, 194,.8)  ;}
 
