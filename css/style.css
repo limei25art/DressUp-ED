@@ -69,11 +69,11 @@ background: linear-gradient(0deg,rgba(21, 164, 193, 1) 5%, rgba(25, 116, 160, 1)
   border: 3px solid rgba(28, 74, 131,.8);
   border-radius: 45px;
   backdrop-filter: blur(7px);
-  background: radial-gradient(circle,rgba(255, 255, 255, .2) 21%, rgba(255, 255, 255, .5) 84%);
+  background: radial-gradient(circle,rgba(255, 255, 255, .3) 40%, rgba(255, 255, 255, .7) 90%);
   //background-image: url('../images/main.png');
   background-repeat: no-repeat;
   background-position: center;
-  background-size: 550px;
+  //background-size: 550px;
   overflow: hidden;
   box-shadow: 2px 5px 10px rgba(28, 74, 131,.5);
 }
@@ -83,7 +83,7 @@ background: linear-gradient(0deg,rgba(21, 164, 193, 1) 5%, rgba(25, 116, 160, 1)
   width: 100%;
   background: radial-gradient(circle,rgba(43, 108, 140, 1) 0%, rgba(18, 62, 112, 1) 100%);
   text-align: center;
-  padding: 5px 0;
+  padding: 8px 0;
   border-radius: 0px 0px 0 0;
   font-size: 14px;
   color: #8CB6DB;
@@ -123,8 +123,8 @@ input {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 550px;
-    height: 550px;
+    width: 500px;
+    height: 500px;
     background-repeat: no-repeat;
     background-position: center;
     background-size: 550px;
@@ -165,11 +165,11 @@ input {
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
-    width: 550px;
-    height: 550px;
+    width: 500px;
+    height: 500px;
     background-repeat: no-repeat;
     background-position: center;
-    background-size: 550px;
+    background-size: 500px;
     z-index: 2;
 }
 .selectable-item {
