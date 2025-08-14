@@ -16,9 +16,9 @@ html, body {
   display: flex;
   flex-direction: column;
   font-family: 'CookieRun Bold.otf';
-  background: #3969AA;
+  background: #4a7abd;
+  //background: linear-gradient(0deg,rgba(74, 122, 189, 1) 7%, rgba(3, 57, 115, 1) 82%);
   background-image: url('../images/bg_img.png');
-  background-color: linear-gradient(0deg,rgba(57, 105, 170, 1) 0%, rgba(9, 58, 110, 1) 100%);
 }
 
 /* YouTube 播放器樣式 */
@@ -80,7 +80,7 @@ html, body {
  #footer {
   //flex-shrink: 0;        /* 防止 footer 被壓縮 */
   width: 100%;
-  background: radial-gradient(circle,rgba(43, 108, 140, 1) 0%, rgba(18, 62, 112, 1) 100%);
+  background: radial-gradient(circle,rgba(74, 122, 189, 1) 0%, rgba(18, 62, 112, 1) 100%);
   text-align: center;
   padding: 8px 0;
   border-radius: 0px 0px 0 0;
