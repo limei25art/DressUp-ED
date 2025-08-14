@@ -67,8 +67,8 @@ html, body {
   height: auto;          /* 不需要固定高度 */
   border: 3px solid rgba(28, 74, 131,.8);
   border-radius: 45px;
-  backdrop-filter: blur(2px);
-  background: radial-gradient(circle,rgba(255, 255, 255, .3) 40%, rgba(255, 255, 255, .7) 90%);
+  backdrop-filter: blur(1.5px);
+  background: radial-gradient(circle,rgba(255, 255, 255, .2) 40%, rgba(255, 255, 255, .6) 90%);
   //background-image: url('../images/main.png');
   background-repeat: no-repeat;
   background-position: center;
@@ -171,14 +171,14 @@ input {
     background-size: 500px;
     z-index: 2;
 }
-.selectable-item {
+//.selectable-item {
   cursor: pointer;
   transition: 0.3s ease;
   border-radius: 10px;
   border: 3px solid transparent; /* 初始透明框線，避免 layout 跳動 */
 }
 
-.selectable-item.selected {
+//.selectable-item.selected {
   border-color: #4caf50; /* 綠色邊框 */
   filter: brightness(1.2) saturate(1.3);
   box-shadow: 0 0 10px #4caf50;
@@ -264,7 +264,7 @@ input {
 #tab3:checked ~ .tabBox > label[for="tab3"],
 #tab4:checked ~ .tabBox > label[for="tab4"],
 #tab5:checked ~ .tabBox > label[for="tab5"],
-#tab6:checked ~ .tabBox > label[for="tab6"] {background-color: rgba(48, 168, 194, .8)  ;}
+#tab6:checked ~ .tabBox > label[for="tab6"] {background-color: rgba(48, 168, 194,.8)  ;}
 
 #tab1:checked ~ .hair,
 #tab2:checked ~ .emoji,
