@@ -9,19 +9,19 @@
     <link rel="apple-touch-icon" sizes="180x180" href="favicon/apple-touch-icon.png" />
     <meta name="apple-mobile-web-app-title" content="ED Dress Up" />
     <link rel="manifest" href="favicon/site.webmanifest" />
-    
-    
+
     <link href="css/style.css" rel="stylesheet">
     <link href="css/mobile.css" rel="stylesheet">
-     <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
+    
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/html2canvas/1.4.1/html2canvas.min.js"></script>
 </head>
 <body>
 
         <!-- <img id="body" src="images/bgimg.png" ><div>-->
     <div id="wrap">
         <img class="aaaa" src="images/main.png" >
-        <iframe id="youtube-player2" src="https://www.youtube.com/embed/iScbKcpMEJQ?si=dwq2z_fflEjqIyOE" frameborder="0"></iframe></label>
         <button id="save-button">Save</button>
+        <iframe  src="https://www.youtube.com/embed/videoseries?si=vZUNX-bz1TmLUCcQ&amp;list=PLjkJIZ79Q7fWlA4ZzxoYo4OrnZ_0AhHbi" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
         <input type="radio" name="tab-menu" id="tab1" checked>
         <input type="radio" name="tab-menu" id="tab2">
         <input type="radio" name="tab-menu" id="tab3">
@@ -358,7 +358,7 @@
     <script>
         document.getElementById('save-button').addEventListener('click', function() {
             // 隱藏不必要的元素
-            const youtubePlayer = document.getElementById('youtube-player');
+            const youtubePlayer = document.getElementById('youtube-player2');
             const saveButton = document.getElementById('save-button');
             const tabBox = document.querySelector('.tabBox');
             const items = document.querySelectorAll('.item');
