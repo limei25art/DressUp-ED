@@ -2,6 +2,10 @@
     #wrap {
         width: 90%;
     }
+    #youtube-player2 {
+    top: 5%;
+    
+}
     .item {
         overflow-x: scroll;
     }
