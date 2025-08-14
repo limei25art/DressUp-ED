@@ -16,8 +16,10 @@ html, body {
   display: flex;
   flex-direction: column;
   font-family: 'CookieRun Bold.otf';
-  background: url('../images/bg_img.png') no-repeat center / cover, burlywood;
-  background-color: #6e8696;
+ background: #15A4C1;
+background: linear-gradient(0deg,rgba(21, 164, 193, 1) 5%, rgba(25, 116, 160, 1) 53%, rgba(18, 62, 112, 1) 94%);
+  //background: url('../images/bg_img.png') no-repeat center / cover, burlywood;
+  //background-color: #1c4b83;
 }
 
 /* YouTube 播放器樣式 */
@@ -49,7 +51,7 @@ html, body {
     background-color: rgba(28, 74, 131, .8);
     border: 3px solid rgba(28, 75, 131, .5);
     border-radius: 15px;
-    color: #ffffff;
+    color: #D1DBE6;
     font-family: 'CookieRun\ Bold';
     font-size: 12px;
     cursor: pointer;
@@ -67,7 +69,7 @@ html, body {
   border: 3px solid rgba(28, 74, 131,.8);
   border-radius: 45px;
   backdrop-filter: blur(7px);
-  background-color: rgba(255, 255, 255, .2);
+  background: radial-gradient(circle,rgba(255, 255, 255, .2) 21%, rgba(255, 255, 255, .5) 84%);
   //background-image: url('../images/main.png');
   background-repeat: no-repeat;
   background-position: center;
@@ -79,12 +81,12 @@ html, body {
  #footer {
   //flex-shrink: 0;        /* 防止 footer 被壓縮 */
   width: 100%;
-  background: rgba(28, 74, 131, 1);
+  background: radial-gradient(circle,rgba(43, 108, 140, 1) 0%, rgba(18, 62, 112, 1) 100%);
   text-align: center;
-  padding: 3px 0;
+  padding: 5px 0;
   border-radius: 0px 0px 0 0;
-  font-size: 8px;
-  color: #ffffff;
+  font-size: 14px;
+  color: #8CB6DB;
   //border-top: 2px solid #eee;
   box-shadow: 0 -2px 5px rgba(0,0,0,.5);
   z-index: 1000;
@@ -99,7 +101,7 @@ input {
     bottom: 80px;
     left: 0;
     display: flex;
-    justify-content: #ffffff ;
+    justify-content: #8CB6DB ;
     width: 100%;
 }
 .tabBox > label {
@@ -113,7 +115,7 @@ input {
     box-sizing: border-box;
     z-index: 999;
     font-size: 12px;
-    color: #ffffff;
+    color: #D1DBE6;
     cursor: pointer;
 }
 .aaaa{
