@@ -94,6 +94,18 @@ html, body {
 input {
     display: none;
 }
+
+
+p.one
+{
+    text-align: center;
+    margin: 15px auto 10px;
+    font-size: 20px;
+    color: #ffff;
+
+
+
+}
 /* 標籤選單標題 */
 .tabBox {
     position: absolute;
@@ -225,7 +237,7 @@ input {
 .on_top6 {background-image: url('../images/top/top6.png'); z-index: 9}
 .on_top7 {background-image: url('../images/top/top7.png'); z-index: 9}
 .on_top8 {background-image: url('../images/top/top8.png');z-index: 9}
-.on_top9 {background-image: url('../images/top/top9.png');z-index: 9}
+.on_top9 {background-image: url('../images/top/top9.png');z-index: 13}
 .on_top10 {background-image: url('../images/top/top10.png');z-index: 9}
 .on_top11 {background-image: url('../images/top/top11.png');z-index: 9}
 .on_top12 {background-image: url('../images/top/top12.png');z-index: 9}
@@ -293,7 +305,7 @@ input {
 .on_acc_B10 {background-image: url('../images/acc_B/acc_B10.png'); z-index: 5;}
 .on_acc_B11 {background-image: url('../images/acc_B/acc_B11.png'); z-index: 13;}
 .on_acc_B12 {background-image: url('../images/acc_B/acc_B12.png'); z-index: 13;}
-.on_acc_B13 {background-image: url('../images/acc_B/acc_B13.png'); z-index: 13;}
+.on_acc_B13 {background-image: url('../images/acc_B/acc_B13.png'); z-index: 5;}
 
 
 /* 點選標籤選單 */
