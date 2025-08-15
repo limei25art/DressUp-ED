@@ -33,7 +33,7 @@ html, body {
 }
 #youtube-player2 {
     position: fixed;
-    top: 10%;
+    top: 8%;
     left: 50%;
     transform: translateX(-50%);
     width: 248px;
@@ -63,7 +63,7 @@ html, body {
   flex: 1 0 auto;        /* 自動撐高，撐滿剩餘空間 */
   max-width: 900px;
   width: 100%;
-  margin: 5px auto 10px;
+  margin: 5px auto 20px;
   height: auto;          /* 不需要固定高度 */
   border: 3px solid rgba(28, 74, 131,.8);
   border-radius: 45px;
@@ -102,7 +102,6 @@ p.one
     margin: 15px auto 10px;
     font-size: 14px;
     color: #ffff;
-
 
 
 }
