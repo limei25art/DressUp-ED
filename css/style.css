@@ -38,7 +38,7 @@ html, body {
     transform: translateX(-50%);
     width: 248px;
     height: 140px; /* 修改高度 */
-    z-index: 999999;
+    z-index: 999;
 }
 /* Save 按鈕樣式 */
 #save-button {
@@ -129,6 +129,18 @@ input {
     background-size: 550px;
     z-index: 5;
 }
+.bbbb{
+    position: absolute;
+    top: 10%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 100px;
+    height: 100px;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 550px;
+    z-index: 1000;
+}
 /* 選項卡選單內容 */
 .item {
     display: none;
@@ -196,7 +208,13 @@ input {
 .on_hair8 {background-image: url('../images/hair/hair8.png');z-index:7}
 .on_hair9 {background-image: url('../images/hair/hair9.png');z-index:7}
 .on_hair10 {background-image: url('../images/hair/hair10.png');z-index:7}
-.on_hair11 {background-image: url('../images/hair/hair11.png');z-index:12}
+.on_hair11 {background-image: url('../images/hair/hair11.png');z-index:7}
+.on_hair12 {background-image: url('../images/hair/hair12.png');z-index:7}
+.on_hair13 {background-image: url('../images/hair/hair13.png');z-index:7}
+.on_hair14 {background-image: url('../images/hair/hair14.png');z-index:7}
+.on_hair15 {background-image: url('../images/hair/hair15.png');z-index:7}
+
+.on_hair99 {background-image: url('../images/hair/hair99.png');z-index:12}
 
 /* 上衣 on */
 .on_top1 {background-image: url('../images/top/top1.png');z-index: 9}
@@ -212,6 +230,12 @@ input {
 .on_top11 {background-image: url('../images/top/top11.png');z-index: 9}
 .on_top12 {background-image: url('../images/top/top12.png');z-index: 9}
 .on_top13 {background-image: url('../images/top/top13.png');z-index: 9}
+.on_top14 {background-image: url('../images/top/top14.png');z-index: 9}
+.on_top15 {background-image: url('../images/top/top15.png');z-index: 9}
+.on_top16 {background-image: url('../images/top/top16.png');z-index: 9}
+
+.on_top98 {background-image: url('../images/top/top98.png');z-index: 11}
+.on_top99 {background-image: url('../images/top/top99.png');z-index: 11}
 
 /* 下裝 on */
 .on_bottom1 {background-image: url('../images/bottom/bottom1.png'); z-index: 8;}
@@ -222,7 +246,11 @@ input {
 .on_bottom6 {background-image: url('../images/bottom/bottom6.png'); z-index: 8;}
 .on_bottom7 {background-image: url('../images/bottom/bottom7.png'); z-index: 8;}
 .on_bottom8 {background-image: url('../images/bottom/bottom8.png'); z-index: 8;}
-.on_bottom9 {background-image: url('../images/bottom/bottom9.png'); z-index: 11;}
+.on_bottom9 {background-image: url('../images/bottom/bottom9.png'); z-index: 8;}
+.on_bottom10 {background-image: url('../images/bottom/bottom10.png'); z-index: 8;}
+.on_bottom11 {background-image: url('../images/bottom/bottom11.png'); z-index: 8;}
+.on_bottom12 {background-image: url('../images/bottom/bottom12.png'); z-index: 8;}
+.on_bottom13 {background-image: url('../images/bottom/bottom13.png'); z-index: 8;}
 
 /* 表情 on */
 .on_emoji1 {background-image: url('../images/emoji/emoji1.png'); z-index:6;}
@@ -238,12 +266,19 @@ input {
 /* 配件A on */
 .on_acc_A1 {background-image: url('../images/acc_A/acc_A1.png'); z-index: 12;}
 .on_acc_A2 {background-image: url('../images/acc_A/acc_A2.png'); z-index: 6;}
-.on_acc_A3 {background-image: url('../images/acc_A/acc_A3.png'); z-index: 12;}
+.on_acc_A3 {background-image: url('../images/acc_A/acc_A3.png'); z-index: 14;}
 .on_acc_A4 {background-image: url('../images/acc_A/acc_A4.png'); z-index: 12;}
 .on_acc_A5 {background-image: url('../images/acc_A/acc_A5.png'); z-index: 13;}
 .on_acc_A6 {background-image: url('../images/acc_A/acc_A6.png'); z-index: 4;}
 .on_acc_A7 {background-image: url('../images/acc_A/acc_A7.png'); z-index: 15;}
 .on_acc_A8 {background-image: url('../images/acc_A/acc_A8.png'); z-index: 12;}
+.on_acc_A9 {background-image: url('../images/acc_A/acc_A9.png'); z-index: 4;}
+.on_acc_A10 {background-image: url('../images/acc_A/acc_A10.png'); z-index: 14;}
+.on_acc_A11 {background-image: url('../images/acc_A/acc_A11.png'); z-index: 14;}
+.on_acc_A12 {background-image: url('../images/acc_A/acc_A12.png'); z-index: 14;}
+.on_acc_A13 {background-image: url('../images/acc_A/acc_A13.png'); z-index: 14;}
+.on_acc_A14 {background-image: url('../images/acc_A/acc_A14.png'); z-index: 14;}
+
 
 /* 配件B on */
 .on_acc_B1 {background-image: url('../images/acc_B/acc_B1.png'); z-index: 13;}
@@ -257,6 +292,9 @@ input {
 .on_acc_B9 {background-image: url('../images/acc_B/acc_B9.png'); z-index: 12;}
 .on_acc_B10 {background-image: url('../images/acc_B/acc_B10.png'); z-index: 5;}
 .on_acc_B11 {background-image: url('../images/acc_B/acc_B11.png'); z-index: 13;}
+.on_acc_B12 {background-image: url('../images/acc_B/acc_B12.png'); z-index: 13;}
+.on_acc_B13 {background-image: url('../images/acc_B/acc_B13.png'); z-index: 13;}
+
 
 /* 點選標籤選單 */
 #tab1:checked ~ .tabBox > label[for="tab1"],
