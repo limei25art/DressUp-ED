@@ -24,7 +24,7 @@ html, body {
 /* YouTube 播放器樣式 */
 #youtube-player {
     position: fixed;
-    top: -8px;
+    top: -10px;
     left: 50%;
     transform: translateX(-50%);
     width: 248px;
@@ -63,7 +63,7 @@ html, body {
   flex: 1 0 auto;        /* 自動撐高，撐滿剩餘空間 */
   max-width: 900px;
   width: 100%;
-  margin: 5px auto 20px;
+  margin: 5px auto 12px;
   height: auto;          /* 不需要固定高度 */
   border: 3px solid rgba(28, 74, 131,.8);
   border-radius: 45px;
@@ -82,7 +82,7 @@ html, body {
   width: 100%;
   background: radial-gradient(circle,rgba(74, 122, 189, 1) 0%, rgba(18, 62, 112, 1) 100%);
   text-align: center;
-  padding: 8px 0;
+  padding: 2px 0;
   border-radius: 0px 0px 0 0;
   font-size: 14px;
   color: #8CB6DB;
@@ -99,7 +99,7 @@ input {
 p.one
 {
     text-align: center;
-    margin: 15px auto 10px;
+    margin: 15px auto 5px;
     font-size: 14px;
     color: #ffff;
 
