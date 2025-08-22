@@ -335,3 +335,24 @@ input[name="item-acc_A"]:checked + .on {display: block;}
 /* 配件B部分 頭部 */
 input[name="item-acc_B"]:checked + .on {display: block;}
 
+/* Selected item styling - Blue border for currently selected clothing */
+.selected-item {
+    border: 3px solid #2196F3 !important; /* Blue border */
+    border-radius: 25px;
+    box-shadow: 0 0 8px #d4ebff;
+    filter: brightness(1.1) saturate(1.2);
+    transition: all 0.3s ease;
+}
+
+/* Enhanced hover effect for clothing items */
+.item > label img:hover {
+    transform: scale(1.05);
+    transition: all 0.2s ease;
+}
+
+/* Make sure the selected state is visible */
+.item > label img {
+    transition: all 0.3s ease;
+}
+
+
