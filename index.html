@@ -488,5 +488,74 @@
         });
     </script>
     <script src="script.js"></script>
+        <script>
+document.addEventListener('DOMContentLoaded', function() {
+    // 支持單選的類別
+    const radioCategories = ['item-hair', 'item-emoji', 'item-top', 'item-bottom', 'item-acc_B'];
+
+    radioCategories.forEach(category => {
+        const inputs = document.querySelectorAll(`input[name="${category}"]`);
+        inputs.forEach(input => {
+            input.addEventListener('change', function() {
+                if (input.type === 'radio') {
+                    // 單選：先移除全部同類項目的選中樣式
+                    const categoryName = category.replace('item-', '');
+                    const allLabels = document.querySelectorAll(`label[for^="${categoryName}"] img`);
+                    allLabels.forEach(img => {
+                        img.classList.remove('selected-item');
+                    });
+                    // 新選項加藍色邊框
+                    if (this.checked) {
+                        const labelImg = document.querySelector(`label[for="${this.id}"] img`);
+                        if (labelImg) {
+                            labelImg.classList.add('selected-item');
+                        }
+                    }
+                } else if (input.type === 'checkbox') {
+                    // 多選：獨立添加/移除選中樣式
+                    const labelImg = document.querySelector(`label[for="${this.id}"] img`);
+                    if (labelImg) {
+                        if (this.checked) {
+                            labelImg.classList.add('selected-item');
+                        } else {
+                            labelImg.classList.remove('selected-item');
+                        }
+                    }
+                }
+            });
+
+            // 初始化時設定正確的選中狀態
+            if (input.checked) {
+                const labelImg = document.querySelector(`label[for="${input.id}"] img`);
+                if (labelImg) {
+                    labelImg.classList.add('selected-item');
+                }
+            }
+        });
+    });
+
+    // 原先支持的配件A 多選
+    const accACheckboxes = document.querySelectorAll('input[name="item-acc_A"]');
+    accACheckboxes.forEach(checkbox => {
+        checkbox.addEventListener('change', function() {
+            const labelImg = document.querySelector(`label[for="${this.id}"] img`);
+            if (labelImg) {
+                if (this.checked) {
+                    labelImg.classList.add('selected-item');
+                } else {
+                    labelImg.classList.remove('selected-item');
+                }
+            }
+        });
+        if (checkbox.checked) {
+            const labelImg = document.querySelector(`label[for="${checkbox.id}"] img`);
+            if (labelImg) {
+                labelImg.classList.add('selected-item');
+            }
+        }
+    });
+});
+
+</script>
 </body>
 </html>
