@@ -33,7 +33,9 @@
         <input type="radio" name="tab-menu" id="tab4">
         <input type="radio" name="tab-menu" id="tab5">
         <input type="radio" name="tab-menu" id="tab6">
+        <input type="radio" name="tab-menu" id="tab7">
         <div class="tabBox">
+            <label for="tab7">etoE</label>
             <label for="tab1">髮型</label>
             <label for="tab2">表情</label>
             <label for="tab3">上衣</label>
@@ -41,6 +43,48 @@
             <label for="tab5">配件A</label>
             <label for="tab6">配件B</label>
         </div>
+ 
+        <!-- 全身 -->
+        <div class="item all">
+            <label for="all1"><img src="images/all/iall1.png"></label>
+            <label for="all2"><img src="images/all/iall2.png"></label>
+            <label for="all3"><img src="images/all/iall3.png"></label>
+            <label for="all4"><img src="images/all/iall4.png"></label>
+            <label for="all5"><img src="images/all/iall5.png"></label>
+            <label for="all6"><img src="images/all/iall6.png"></label>
+            <label for="all7"><img src="images/all/iall7.png"></label>
+            <label for="all8"><img src="images/all/iall8.png"></label>
+            <label for="all9"><img src="images/all/iall9.png"></label>
+        </div><!-- item all -->
+        <!-- 全身1 -->
+        <input type="radio" name="item-all" id="all1">
+        <label for="all1" class="on on_all1"></label>
+        <!-- 全身2 -->
+        <input type="radio" name="item-all" id="all2">
+        <label for="all2" class="on on_all2"></label>
+        <!-- 全身3 -->
+        <input type="radio" name="item-all" id="all3">
+        <label for="all3" class="on on_all3"></label>
+        <!-- 全身4 -->
+        <input type="radio" name="item-all" id="all4">
+        <label for="all4" class="on on_all4"></label>
+        <!-- 全身5 -->
+        <input type="radio" name="item-all" id="all5">
+        <label for="all5" class="on on_all5"></label>
+        <!-- 全身6 -->
+        <input type="radio" name="item-all" id="all6">
+        <label for="all6" class="on on_all6"></label>
+        <!-- 全身7 -->
+        <input type="radio" name="item-all" id="all7">
+        <label for="all7" class="on on_all7"></label>
+        <!-- 全身8 -->
+        <input type="radio" name="item-all" id="all8">
+        <label for="all8" class="on on_all8"></label>
+        <!-- 全身9 -->
+        <input type="radio" name="item-all" id="all9">
+        <label for="all9" class="on on_all9"></label>
+        <!-- 全身 技巧 -->
+
         <!-- 髮型 -->
         <div class="item hair">
             <label for="hair1"><img src="images/hair/ihair1.png"></label>
@@ -62,17 +106,17 @@
             <label for="hair99"><img src="images/hair/ihair99.png"></label>
         </div><!--item hair-->
         <!-- 髮型1 -->
-        <input type="radio" name="item-hair" id="hair1"checked>
+        <input type="radio" name="item-hair" id="hair1" value="1"checked>
         <label for="hair1" class="on on_hair1">       
         </label>
         <!-- 髮型2 -->
-        <input type="radio" name="item-hair" id="hair2"> 
+        <input type="radio" name="item-hair" id="hair2"value="2"> 
         <label for="hair2" class="on on_hair2"></label>
         <!-- 髮型3 -->
-        <input type="radio" name="item-hair" id="hair3">
+        <input type="radio" name="item-hair" id="hair3"value="3">
         <label for="hair3" class="on on_hair3"></label>
         <!-- 髮型4 -->
-        <input type="radio" name="item-hair" id="hair4">
+        <input type="radio" name="item-hair" id="hair4"value="4">
         <label for="hair4" class="on on_hair4"></label>
         <!-- 髮型5 -->
         <input type="radio" name="item-hair" id="hair5" >
@@ -107,6 +151,7 @@
         <!-- 髮型15 -->
         <input type="radio" name="item-hair" id="hair15" >
         <label for="hair15" class="on on_hair15"></label>
+        <label for="hair16" class="on on_hair16"></label>
 
         <!-- 髮型99 -->
         <input type="radio" name="item-hair" id="hair99" >
@@ -441,121 +486,8 @@
         <span><a href="https://www.instagram.com/edanlui"target="_blank"style="color: #ffffff">E IG</a></span> ♡★
         <h5><a href="https://linktr.ee/li_mei25"; target="_blank"; style="color: #ffffff;">UNOFFICIA.FANART BY LI_MEI.ART</a></h5>
     </div>
-    <script>
-        document.getElementById('save-button').addEventListener('click', function() {
-            // 隱藏不必要的元素
-            const youtubePlayer = document.getElementById('youtube-player2');
-            const saveButton = document.getElementById('save-button');
-            const tabBox = document.querySelector('.tabBox');
-            const items = document.querySelectorAll('.item');
-            youtubePlayer.style.display = 'none';
-            saveButton.style.display = 'none';
-            tabBox.style.display = 'none';
-            items.forEach(item => item.style.display = 'none');
-
-            // 使用 html2canvas 捕獲 #wrap
-            html2canvas(document.getElementById('wrap'), {
-                useCORS: true,
-                scale: 2 // 提高圖片質量
-            }).then(canvas => {
-                // 恢復隱藏的元素
-                youtubePlayer.style.display = 'block';
-                saveButton.style.display = 'block';
-                tabBox.style.display = 'flex';
-                items.forEach(item => {
-                    if (item.classList.contains(document.querySelector('input[name="tab"]:checked')?.id)) {
-                        item.style.display = 'flex';
-                    }
-                });
-
-                // 生成並下載圖片
-                const link = document.createElement('a');
-                link.download = 'outfit.png';
-                link.href = canvas.toDataURL('image/png');
-                link.click();
-            }).catch(error => {
-                console.error('截圖失敗:', error);
-                // 恢復隱藏的元素
-                youtubePlayer.style.display = 'block';
-                saveButton.style.display = 'block';
-                tabBox.style.display = 'flex';
-                items.forEach(item => {
-                    if (item.classList.contains(document.querySelector('input[name="tab"]:checked')?.id)) {
-                        item.style.display = 'flex';
-                    }
-                });
-            });
-        });
-    </script>
     <script src="script.js"></script>
-        <script>
-document.addEventListener('DOMContentLoaded', function() {
-    // 支持單選的類別
-    const radioCategories = ['item-hair', 'item-emoji', 'item-top', 'item-bottom', 'item-acc_B'];
-
-    radioCategories.forEach(category => {
-        const inputs = document.querySelectorAll(`input[name="${category}"]`);
-        inputs.forEach(input => {
-            input.addEventListener('change', function() {
-                if (input.type === 'radio') {
-                    // 單選：先移除全部同類項目的選中樣式
-                    const categoryName = category.replace('item-', '');
-                    const allLabels = document.querySelectorAll(`label[for^="${categoryName}"] img`);
-                    allLabels.forEach(img => {
-                        img.classList.remove('selected-item');
-                    });
-                    // 新選項加藍色邊框
-                    if (this.checked) {
-                        const labelImg = document.querySelector(`label[for="${this.id}"] img`);
-                        if (labelImg) {
-                            labelImg.classList.add('selected-item');
-                        }
-                    }
-                } else if (input.type === 'checkbox') {
-                    // 多選：獨立添加/移除選中樣式
-                    const labelImg = document.querySelector(`label[for="${this.id}"] img`);
-                    if (labelImg) {
-                        if (this.checked) {
-                            labelImg.classList.add('selected-item');
-                        } else {
-                            labelImg.classList.remove('selected-item');
-                        }
-                    }
-                }
-            });
-
-            // 初始化時設定正確的選中狀態
-            if (input.checked) {
-                const labelImg = document.querySelector(`label[for="${input.id}"] img`);
-                if (labelImg) {
-                    labelImg.classList.add('selected-item');
-                }
-            }
-        });
-    });
-
-    // 原先支持的配件A 多選
-    const accACheckboxes = document.querySelectorAll('input[name="item-acc_A"]');
-    accACheckboxes.forEach(checkbox => {
-        checkbox.addEventListener('change', function() {
-            const labelImg = document.querySelector(`label[for="${this.id}"] img`);
-            if (labelImg) {
-                if (this.checked) {
-                    labelImg.classList.add('selected-item');
-                } else {
-                    labelImg.classList.remove('selected-item');
-                }
-            }
-        });
-        if (checkbox.checked) {
-            const labelImg = document.querySelector(`label[for="${checkbox.id}"] img`);
-            if (labelImg) {
-                labelImg.classList.add('selected-item');
-            }
-        }
-    });
-});
-
-</script>
+   
 </body>
+
 </html>
