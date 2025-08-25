@@ -9,42 +9,49 @@ document.querySelectorAll('input[type=radio][name^="item-"]').forEach(input => {
 });
 
         document.getElementById('save-button').addEventListener('click', function() {
-  // 隱藏不必要的元素
-  const youtubePlayer = document.getElementById('youtube-player2');
-  const saveButton = document.getElementById('save-button');
-  const tabBox = document.querySelector('.tabBox');
-  const items = document.querySelectorAll('.item');
+            // 隱藏不必要的元素
+            const youtubePlayer = document.getElementById('youtube-player2');
+            const saveButton = document.getElementById('save-button');
+            const tabBox = document.querySelector('.tabBox');
+            const items = document.querySelectorAll('.item');
+            youtubePlayer.style.display = 'none';
+            saveButton.style.display = 'none';
+            tabBox.style.display = 'none';
+            items.forEach(item => item.style.display = 'none');
 
-  youtubePlayer.style.display = 'none';
-  saveButton.style.display = 'none';
-  tabBox.style.display = 'none';
-  items.forEach(item => item.style.display = 'none');
+            // 使用 html2canvas 捕獲 #wrap
+            html2canvas(document.getElementById('wrap'), {
+                useCORS: true,
+                scale: 2 // 提高圖片質量
+            }).then(canvas => {
+                // 恢復隱藏的元素
+                youtubePlayer.style.display = 'block';
+                saveButton.style.display = 'block';
+                tabBox.style.display = 'flex';
+                items.forEach(item => {
+                    if (item.classList.contains(document.querySelector('input[name="tab"]:checked')?.id)) {
+                        item.style.display = 'flex';
+                    }
+                });
 
-  // 使用 html2canvas 捕獲 #wrap
-  html2canvas(document.getElementById('wrap'), {
-    useCORS: true,
-    scale: 2 // 提高圖片質量
-  }).then(canvas => {
-    // 截圖完成，全部恢復 UI
-    youtubePlayer.style.display = 'block';
-    saveButton.style.display = 'block';
-    tabBox.style.display = 'flex';
-    items.forEach(item => item.style.display = 'flex'); // 全部恢復顯示
-
-    // 生成並下載圖片
-    const link = document.createElement('a');
-    link.download = 'outfit.png';
-    link.href = canvas.toDataURL('image/png');
-    link.click();
-  }).catch(error => {
-    console.error('截圖失敗:', error);
-    youtubePlayer.style.display = 'block';
-    saveButton.style.display = 'block';
-    tabBox.style.display = 'flex';
-    items.forEach(item => item.style.display = 'flex'); // 全部恢復顯示
-  });
-});
-
+                // 生成並下載圖片
+                const link = document.createElement('a');
+                link.download = 'outfit.png';
+                link.href = canvas.toDataURL('image/png');
+                link.click();
+            }).catch(error => {
+                console.error('截圖失敗:', error);
+                // 恢復隱藏的元素
+                youtubePlayer.style.display = 'block';
+                saveButton.style.display = 'block';
+                tabBox.style.display = 'flex';
+                items.forEach(item => {
+                    if (item.classList.contains(document.querySelector('input[name="tab"]:checked')?.id)) {
+                        item.style.display = 'flex';
+                    }
+                });
+            });
+        });
   
 
 document.addEventListener('DOMContentLoaded', function() {
