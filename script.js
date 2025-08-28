@@ -10,7 +10,8 @@ document.querySelectorAll('input[type=radio][name^="item-"]').forEach(input => {
 
        document.getElementById('save-button').addEventListener('click', function() {
     // 取得背景圖片元素與其他UI元素
-    const bgImg = document.getElementById('wrap-bg-img'); // 預設在wrap內的背景img，需自行新增
+    const bgImg = document.getElementById('wrap-bg-img');
+bgImg.style.display = 'block'; // 截圖前顯示背景圖片
     const youtubePlayer = document.getElementById('youtube-player2');
     const saveButton = document.getElementById('save-button');
     const tabBox = document.querySelector('.tabBox');
@@ -86,6 +87,7 @@ document.querySelectorAll('input[type=radio][name^="item-"]').forEach(input => {
         scale: 2,
         logging: false
     }).then(canvas => {
+        bgImg.style.display = 'none';
         restoreUI();
         const link = document.createElement('a');
         link.download = 'outfit.png';
