@@ -8,7 +8,7 @@ document.querySelectorAll('input[type=radio][name^="item-"]').forEach(input => {
   });
 });
 
-        document.getElementById('save-button').addEventListener('click', function() {
+       document.getElementById('save-button').addEventListener('click', function() {
     // 保存當前完整狀態
     const currentState = {
         youtubePlayerDisplay: document.getElementById('youtube-player2').style.display || 'block',
@@ -90,33 +90,6 @@ document.querySelectorAll('input[type=radio][name^="item-"]').forEach(input => {
     }).catch(error => {
         console.error('截圖失敗:', error);
         restoreUI();
-    });
-});
-
-
-        // 恢復背景及 UI
-        wrap.style.background = originalBg;
-        wrap.style.backgroundImage = originalBgImage;
-        wrap.style.backgroundSize = originalBgSize;
-        wrap.style.backgroundPosition = originalBgPosition;
-
-        youtubePlayer.style.display = currentState.youtubePlayerDisplay;
-        saveButton.style.display = currentState.saveButtonDisplay;
-        tabBox.style.display = currentState.tabBoxDisplay;
-
-        items.forEach(item => item.style.display = '');
-
-        currentState.selectedItems.forEach(itemState => {
-            const input = document.getElementById(itemState.id);
-            if (input) input.checked = itemState.checked;
-            const labelImg = document.querySelector(`label[for="${itemState.id}"] img`);
-            if (labelImg) labelImg.classList.add('selected-item');
-        });
-
-        if (currentState.checkedTab) {
-            const checkedInput = document.getElementById(currentState.checkedTab);
-            if (checkedInput) checkedInput.checked = true;
-        }
     });
 });
 
