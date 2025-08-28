@@ -100,10 +100,26 @@ p.one
 {
     text-align: center;
     margin: 15px auto 5px;
-    font-size: 14px;
-    color: #ffff;
-
-
+    font-size: 16px;
+    font-weight: bold;
+    color: #b3e1f2;
+ /* 漸變色文字 */
+  background: linear-gradient(90deg, #4a7abd, #6CD96A, #C154CF, #FFB84D, #4a7abd);
+  background-size: 400% 400%;
+  background-clip: text;
+  -webkit-background-clip: text;
+  color: transparent;
+  /* 文字陰影 */
+  text-shadow: 0 3px 8px rgba(52, 73, 94, 0.24), 0 1px 0 #ffffff;
+  /* 動態漸變動畫 */
+  animation: gradientMove 4s ease infinite;
+}
+@keyframes gradientMove {
+  0% { background-position: 0% 50%; }
+  25% { background-position: 100% 50%; }
+  50% { background-position: 50% 100%; }
+  75% { background-position: 0% 50%; }
+  100% { background-position: 0% 50%; }
 }
 /* 標籤選單標題 */
 .tabBox {
