@@ -42,61 +42,57 @@ document.querySelectorAll('input[type=radio][name^="item-"]').forEach(input => {
     tabBox.style.display = 'none';
     items.forEach(item => item.style.display = 'none');
 
-    // 強制設定匯出時背景圖 (加這段即可)
-    const wrap = document.getElementById('wrap');
-    const originalBg = wrap.style.background;
-    const originalBgImage = wrap.style.backgroundImage;
-    const originalBgSize = wrap.style.backgroundSize;
-    const originalBgPosition = wrap.style.backgroundPosition;
-
-    wrap.style.background = "#4a7abd";
-    wrap.style.backgroundImage = "url('../images/bg_img.png')";
-    wrap.style.backgroundSize = "cover";
-    wrap.style.backgroundPosition = "center";
-
-    // 使用 html2canvas
-    html2canvas(wrap, {
-        useCORS: true,
-        scale: 2,
-        logging: false
-    }).then(canvas => {
-        // 恢復背景
-        wrap.style.background = originalBg;
-        wrap.style.backgroundImage = originalBgImage;
-        wrap.style.backgroundSize = originalBgSize;
-        wrap.style.backgroundPosition = originalBgPosition;
-
-        // 恢復 UI 元素
+    // 健壯的恢復函數
+    const restoreUI = () => {
+        // 恢復基本元素
         youtubePlayer.style.display = currentState.youtubePlayerDisplay;
         saveButton.style.display = currentState.saveButtonDisplay;
         tabBox.style.display = currentState.tabBoxDisplay;
 
-        // 清除 items 內聯 style 交由 CSS 控制顯示
-        items.forEach(item => item.style.display = '');
+        // 清除所有 item 的內聯 display 樣式，讓 CSS 控制顯示
+        items.forEach(item => {
+            item.style.display = '';
+        });
 
-        // 恢復所有選中的選項狀態和樣式
+        // 恢復所有選中的項目狀態及視覺選中
         currentState.selectedItems.forEach(itemState => {
             const input = document.getElementById(itemState.id);
             if (input) {
                 input.checked = itemState.checked;
+
                 const labelImg = document.querySelector(`label[for="${itemState.id}"] img`);
-                if (labelImg) labelImg.classList.add('selected-item');
+                if (labelImg) {
+                    labelImg.classList.add('selected-item');
+                }
             }
         });
 
-        // 恢復標籤卡狀態
+        // 恢復選項卡狀態
         if (currentState.checkedTab) {
             const checkedInput = document.getElementById(currentState.checkedTab);
-            if (checkedInput) checkedInput.checked = true;
+            if (checkedInput) {
+                checkedInput.checked = true; // CSS 兄弟選擇器會自動處理顯示
+            }
         }
+    };
 
-        // 下載圖片
+    // 使用 html2canvas 截圖 #wrap (含原本背景圖)
+    html2canvas(document.getElementById('wrap'), {
+        useCORS: true,
+        scale: 2,
+        logging: false
+    }).then(canvas => {
+        restoreUI();
         const link = document.createElement('a');
         link.download = 'outfit.png';
         link.href = canvas.toDataURL('image/png');
         link.click();
     }).catch(error => {
         console.error('截圖失敗:', error);
+        restoreUI();
+    });
+});
+
 
         // 恢復背景及 UI
         wrap.style.background = originalBg;
