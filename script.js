@@ -12,12 +12,12 @@ document.querySelectorAll('input[type=radio][name^="item-"]').forEach(input => {
     // 保存當前完整狀態
     const currentState = {
         youtubePlayerDisplay: document.getElementById('youtube-player2').style.display || 'block',
-        saveButtonDisplay: document.getElementById('save-button').style.display || 'block', 
+        saveButtonDisplay: document.getElementById('save-button').style.display || 'block',
         tabBoxDisplay: document.querySelector('.tabBox').style.display || 'flex',
         checkedTab: document.querySelector('input[name="tab"]:checked')?.id || null,
         selectedItems: []
     };
-    
+
     // 保存所有選中的 item 狀態
     const allInputs = document.querySelectorAll('input[type="radio"], input[type="checkbox"]');
     allInputs.forEach(input => {
@@ -36,68 +36,94 @@ document.querySelectorAll('input[type=radio][name^="item-"]').forEach(input => {
     const saveButton = document.getElementById('save-button');
     const tabBox = document.querySelector('.tabBox');
     const items = document.querySelectorAll('.item');
-    
+
     youtubePlayer.style.display = 'none';
     saveButton.style.display = 'none';
     tabBox.style.display = 'none';
     items.forEach(item => item.style.display = 'none');
 
-    // 健壯的恢復函數
-    const restoreUI = () => {
-        // 恢復基本元素
-        youtubePlayer.style.display = currentState.youtubePlayerDisplay;
-        saveButton.style.display = currentState.saveButtonDisplay;
-        tabBox.style.display = currentState.tabBoxDisplay;
-        
-        // *** 關鍵修正：清除所有 item 的內聯 display 樣式 ***
-        // 讓 CSS 的兄弟選擇器重新控制顯示邏輯
-        items.forEach(item => {
-            // 清除內聯 display 樣式，恢復 CSS 控制
-            item.style.display = '';
-        });
-        
-        // 恢復所有選中的項目狀態
-        currentState.selectedItems.forEach(itemState => {
-            const input = document.getElementById(itemState.id);
-            if (input) {
-                input.checked = itemState.checked;
-                
-                // 恢復視覺選中狀態（藍色邊框）
-                const labelImg = document.querySelector(`label[for="${itemState.id}"] img`);
-                if (labelImg) {
-                    labelImg.classList.add('selected-item');
-                }
-            }
-        });
-        
-        // 恢復選項卡狀態
-        if (currentState.checkedTab) {
-            const checkedInput = document.getElementById(currentState.checkedTab);
-            if (checkedInput) {
-                checkedInput.checked = true;
-                // CSS 兄弟選擇器會自動處理顯示邏輯
-            }
-        }
-    };
+    // 強制設定匯出時背景圖 (加這段即可)
+    const wrap = document.getElementById('wrap');
+    const originalBg = wrap.style.background;
+    const originalBgImage = wrap.style.backgroundImage;
+    const originalBgSize = wrap.style.backgroundSize;
+    const originalBgPosition = wrap.style.backgroundPosition;
+
+    wrap.style.background = "#4a7abd";
+    wrap.style.backgroundImage = "url('../images/bg_img.png')";
+    wrap.style.backgroundSize = "cover";
+    wrap.style.backgroundPosition = "center";
 
     // 使用 html2canvas
-    html2canvas(document.getElementById('wrap'), {
+    html2canvas(wrap, {
         useCORS: true,
         scale: 2,
         logging: false
     }).then(canvas => {
-        restoreUI();
-        
+        // 恢復背景
+        wrap.style.background = originalBg;
+        wrap.style.backgroundImage = originalBgImage;
+        wrap.style.backgroundSize = originalBgSize;
+        wrap.style.backgroundPosition = originalBgPosition;
+
+        // 恢復 UI 元素
+        youtubePlayer.style.display = currentState.youtubePlayerDisplay;
+        saveButton.style.display = currentState.saveButtonDisplay;
+        tabBox.style.display = currentState.tabBoxDisplay;
+
+        // 清除 items 內聯 style 交由 CSS 控制顯示
+        items.forEach(item => item.style.display = '');
+
+        // 恢復所有選中的選項狀態和樣式
+        currentState.selectedItems.forEach(itemState => {
+            const input = document.getElementById(itemState.id);
+            if (input) {
+                input.checked = itemState.checked;
+                const labelImg = document.querySelector(`label[for="${itemState.id}"] img`);
+                if (labelImg) labelImg.classList.add('selected-item');
+            }
+        });
+
+        // 恢復標籤卡狀態
+        if (currentState.checkedTab) {
+            const checkedInput = document.getElementById(currentState.checkedTab);
+            if (checkedInput) checkedInput.checked = true;
+        }
+
+        // 下載圖片
         const link = document.createElement('a');
         link.download = 'outfit.png';
         link.href = canvas.toDataURL('image/png');
         link.click();
-        
     }).catch(error => {
         console.error('截圖失敗:', error);
-        restoreUI();
+
+        // 恢復背景及 UI
+        wrap.style.background = originalBg;
+        wrap.style.backgroundImage = originalBgImage;
+        wrap.style.backgroundSize = originalBgSize;
+        wrap.style.backgroundPosition = originalBgPosition;
+
+        youtubePlayer.style.display = currentState.youtubePlayerDisplay;
+        saveButton.style.display = currentState.saveButtonDisplay;
+        tabBox.style.display = currentState.tabBoxDisplay;
+
+        items.forEach(item => item.style.display = '');
+
+        currentState.selectedItems.forEach(itemState => {
+            const input = document.getElementById(itemState.id);
+            if (input) input.checked = itemState.checked;
+            const labelImg = document.querySelector(`label[for="${itemState.id}"] img`);
+            if (labelImg) labelImg.classList.add('selected-item');
+        });
+
+        if (currentState.checkedTab) {
+            const checkedInput = document.getElementById(currentState.checkedTab);
+            if (checkedInput) checkedInput.checked = true;
+        }
     });
 });
+
 
 document.addEventListener('DOMContentLoaded', function() {
     // 支持單選的類別
@@ -211,4 +237,3 @@ document.querySelectorAll('input[name^="item-bottom"]').forEach(input => {
     }
   });
 });
-
