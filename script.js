@@ -8,17 +8,24 @@ document.querySelectorAll('input[type=radio][name^="item-"]').forEach(input => {
   });
 });
 
-document.getElementById('save-button').addEventListener('click', function() {
+       document.getElementById('save-button').addEventListener('click', function() {
+    // 取得背景圖片元素與其他UI元素
+    const bgImg = document.getElementById('wrap-bg-img'); // 預設在wrap內的背景img，需自行新增
+    const youtubePlayer = document.getElementById('youtube-player2');
+    const saveButton = document.getElementById('save-button');
+    const tabBox = document.querySelector('.tabBox');
+    const items = document.querySelectorAll('.item');
+
     // 保存當前完整狀態
     const currentState = {
-        youtubePlayerDisplay: document.getElementById('youtube-player2').style.display || 'block',
-        saveButtonDisplay: document.getElementById('save-button').style.display || 'block',
-        tabBoxDisplay: document.querySelector('.tabBox').style.display || 'flex',
+        youtubePlayerDisplay: youtubePlayer.style.display || 'block',
+        saveButtonDisplay: saveButton.style.display || 'block',
+        tabBoxDisplay: tabBox.style.display || 'flex',
         checkedTab: document.querySelector('input[name="tab"]:checked')?.id || null,
         selectedItems: []
     };
 
-    // 保存所有選中的項目狀態
+    // 儲存目前選中的所有項目
     const allInputs = document.querySelectorAll('input[type="radio"], input[type="checkbox"]');
     allInputs.forEach(input => {
         if (input.checked) {
@@ -31,57 +38,64 @@ document.getElementById('save-button').addEventListener('click', function() {
         }
     });
 
-    // 隱藏不必要的元素，方便截圖
-    const youtubePlayer = document.getElementById('youtube-player2');
-    const saveButton = document.getElementById('save-button');
-    const tabBox = document.querySelector('.tabBox');
-    const items = document.querySelectorAll('.item');
+    // 顯示背景圖確保被截取
+    if (bgImg) {
+        bgImg.style.display = 'block';
+    }
 
+    // 隱藏其它 UI 干擾項目
     youtubePlayer.style.display = 'none';
     saveButton.style.display = 'none';
     tabBox.style.display = 'none';
     items.forEach(item => item.style.display = 'none');
 
-    // 截圖前，確保背景可被捕捉（此處可用useCORS:true）
-    html2canvas(document.getElementById('wrap'), {
-        useCORS: true,
-        scale: 2,
-        logging: false
-    }).then(canvas => {
-        // 恢復 UI 狀態
+    // 恢復 UI 函數
+    const restoreUI = () => {
+        if (bgImg) bgImg.style.display = 'none';
+
         youtubePlayer.style.display = currentState.youtubePlayerDisplay;
         saveButton.style.display = currentState.saveButtonDisplay;
         tabBox.style.display = currentState.tabBoxDisplay;
+
         items.forEach(item => item.style.display = '');
-        // 恢復點選狀態
+
+        // 恢復所有選中的項目狀態及其視覺選中效果
         currentState.selectedItems.forEach(itemState => {
             const input = document.getElementById(itemState.id);
             if (input) {
                 input.checked = itemState.checked;
                 const labelImg = document.querySelector(`label[for="${itemState.id}"] img`);
-                if (labelImg) labelImg.classList.add('selected-item');
+                if (labelImg) {
+                    labelImg.classList.add('selected-item');
+                }
             }
         });
+
+        // 恢復選項卡狀態
         if (currentState.checkedTab) {
             const checkedInput = document.getElementById(currentState.checkedTab);
-            if (checkedInput) checkedInput.checked = true;
+            if (checkedInput) {
+                checkedInput.checked = true;
+            }
         }
+    };
 
-        // 下載圖片
+    // 使用 html2canvas 截圖 #wrap
+    html2canvas(document.getElementById('wrap'), {
+        useCORS: true,
+        scale: 2,
+        logging: false
+    }).then(canvas => {
+        restoreUI();
         const link = document.createElement('a');
         link.download = 'outfit.png';
         link.href = canvas.toDataURL('image/png');
         link.click();
     }).catch(error => {
         console.error('截圖失敗:', error);
-        // 恢復 UI 狀態
-        youtubePlayer.style.display = currentState.youtubePlayerDisplay;
-        saveButton.style.display = currentState.saveButtonDisplay;
-        tabBox.style.display = currentState.tabBoxDisplay;
-        items.forEach(item => item.style.display = '');
+        restoreUI();
     });
 });
-
 
 
 document.addEventListener('DOMContentLoaded', function() {
