@@ -9,95 +9,50 @@ document.querySelectorAll('input[type=radio][name^="item-"]').forEach(input => {
 });
 
         document.getElementById('save-button').addEventListener('click', function() {
-    // 保存當前完整狀態
-    const currentState = {
-        youtubePlayerDisplay: document.getElementById('youtube-player2').style.display || 'block',
-        saveButtonDisplay: document.getElementById('save-button').style.display || 'block', 
-        tabBoxDisplay: document.querySelector('.tabBox').style.display || 'flex',
-        checkedTab: document.querySelector('input[name="tab"]:checked')?.id || null,
-        selectedItems: []
-    };
-    
-    // 保存所有選中的 item 狀態
-    const allInputs = document.querySelectorAll('input[type="radio"], input[type="checkbox"]');
-    allInputs.forEach(input => {
-        if (input.checked) {
-            currentState.selectedItems.push({
-                id: input.id,
-                name: input.name,
-                type: input.type,
-                checked: true
-            });
-        }
-    });
-
-    // 隱藏元素進行截圖
+    // 隱藏不必要的元素
     const youtubePlayer = document.getElementById('youtube-player2');
     const saveButton = document.getElementById('save-button');
     const tabBox = document.querySelector('.tabBox');
     const items = document.querySelectorAll('.item');
-    
     youtubePlayer.style.display = 'none';
     saveButton.style.display = 'none';
     tabBox.style.display = 'none';
     items.forEach(item => item.style.display = 'none');
 
-    // 健壯的恢復函數
-    const restoreUI = () => {
-        // 恢復基本元素
-        youtubePlayer.style.display = currentState.youtubePlayerDisplay;
-        saveButton.style.display = currentState.saveButtonDisplay;
-        tabBox.style.display = currentState.tabBoxDisplay;
-        
-        // *** 關鍵修正：清除所有 item 的內聯 display 樣式 ***
-        // 讓 CSS 的兄弟選擇器重新控制顯示邏輯
-        items.forEach(item => {
-            // 清除內聯 display 樣式，恢復 CSS 控制
-            item.style.display = '';
-        });
-        
-        // 恢復所有選中的項目狀態
-        currentState.selectedItems.forEach(itemState => {
-            const input = document.getElementById(itemState.id);
-            if (input) {
-                input.checked = itemState.checked;
-                
-                // 恢復視覺選中狀態（藍色邊框）
-                const labelImg = document.querySelector(`label[for="${itemState.id}"] img`);
-                if (labelImg) {
-                    labelImg.classList.add('selected-item');
-                }
-            }
-        });
-        
-        // 恢復選項卡狀態
-        if (currentState.checkedTab) {
-            const checkedInput = document.getElementById(currentState.checkedTab);
-            if (checkedInput) {
-                checkedInput.checked = true;
-                // CSS 兄弟選擇器會自動處理顯示邏輯
-            }
-        }
-    };
-
-    // 使用 html2canvas
+    // 使用 html2canvas 捕獲 #wrap
     html2canvas(document.getElementById('wrap'), {
         useCORS: true,
-        scale: 2,
-        logging: false
+        scale: 2 // 提高圖片質量
     }).then(canvas => {
-        restoreUI();
-        
+        // 恢復隱藏的元素
+        youtubePlayer.style.display = 'block';
+        saveButton.style.display = 'block';
+        tabBox.style.display = 'flex';
+        items.forEach(item => {
+            if (item.classList.contains(document.querySelector('input[name="tab"]:checked')?.id)) {
+                item.style.display = 'flex';
+            }
+        });
+
+        // 生成並下載圖片
         const link = document.createElement('a');
         link.download = 'outfit.png';
         link.href = canvas.toDataURL('image/png');
         link.click();
-        
     }).catch(error => {
         console.error('截圖失敗:', error);
-        restoreUI();
+        // 恢復隱藏的元素
+        youtubePlayer.style.display = 'block';
+        saveButton.style.display = 'block';
+        tabBox.style.display = 'flex';
+        items.forEach(item => {
+            if (item.classList.contains(document.querySelector('input[name="tab"]:checked')?.id)) {
+                item.style.display = 'flex';
+            }
+        });
     });
 });
+
 
   
 
