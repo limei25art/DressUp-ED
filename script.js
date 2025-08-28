@@ -8,7 +8,7 @@ document.querySelectorAll('input[type=radio][name^="item-"]').forEach(input => {
   });
 });
 
-       document.getElementById('save-button').addEventListener('click', function() {
+document.getElementById('save-button').addEventListener('click', function() {
     // 保存當前完整狀態
     const currentState = {
         youtubePlayerDisplay: document.getElementById('youtube-player2').style.display || 'block',
@@ -18,7 +18,7 @@ document.querySelectorAll('input[type=radio][name^="item-"]').forEach(input => {
         selectedItems: []
     };
 
-    // 保存所有選中的 item 狀態
+    // 保存所有選中的項目狀態
     const allInputs = document.querySelectorAll('input[type="radio"], input[type="checkbox"]');
     allInputs.forEach(input => {
         if (input.checked) {
@@ -31,7 +31,7 @@ document.querySelectorAll('input[type=radio][name^="item-"]').forEach(input => {
         }
     });
 
-    // 隱藏元素進行截圖
+    // 隱藏不必要的元素，方便截圖
     const youtubePlayer = document.getElementById('youtube-player2');
     const saveButton = document.getElementById('save-button');
     const tabBox = document.querySelector('.tabBox');
@@ -42,56 +42,46 @@ document.querySelectorAll('input[type=radio][name^="item-"]').forEach(input => {
     tabBox.style.display = 'none';
     items.forEach(item => item.style.display = 'none');
 
-    // 健壯的恢復函數
-    const restoreUI = () => {
-        // 恢復基本元素
-        youtubePlayer.style.display = currentState.youtubePlayerDisplay;
-        saveButton.style.display = currentState.saveButtonDisplay;
-        tabBox.style.display = currentState.tabBoxDisplay;
-
-        // 清除所有 item 的內聯 display 樣式，讓 CSS 控制顯示
-        items.forEach(item => {
-            item.style.display = '';
-        });
-
-        // 恢復所有選中的項目狀態及視覺選中
-        currentState.selectedItems.forEach(itemState => {
-            const input = document.getElementById(itemState.id);
-            if (input) {
-                input.checked = itemState.checked;
-
-                const labelImg = document.querySelector(`label[for="${itemState.id}"] img`);
-                if (labelImg) {
-                    labelImg.classList.add('selected-item');
-                }
-            }
-        });
-
-        // 恢復選項卡狀態
-        if (currentState.checkedTab) {
-            const checkedInput = document.getElementById(currentState.checkedTab);
-            if (checkedInput) {
-                checkedInput.checked = true; // CSS 兄弟選擇器會自動處理顯示
-            }
-        }
-    };
-
-    // 使用 html2canvas 截圖 #wrap (含原本背景圖)
+    // 截圖前，確保背景可被捕捉（此處可用useCORS:true）
     html2canvas(document.getElementById('wrap'), {
         useCORS: true,
         scale: 2,
         logging: false
     }).then(canvas => {
-        restoreUI();
+        // 恢復 UI 狀態
+        youtubePlayer.style.display = currentState.youtubePlayerDisplay;
+        saveButton.style.display = currentState.saveButtonDisplay;
+        tabBox.style.display = currentState.tabBoxDisplay;
+        items.forEach(item => item.style.display = '');
+        // 恢復點選狀態
+        currentState.selectedItems.forEach(itemState => {
+            const input = document.getElementById(itemState.id);
+            if (input) {
+                input.checked = itemState.checked;
+                const labelImg = document.querySelector(`label[for="${itemState.id}"] img`);
+                if (labelImg) labelImg.classList.add('selected-item');
+            }
+        });
+        if (currentState.checkedTab) {
+            const checkedInput = document.getElementById(currentState.checkedTab);
+            if (checkedInput) checkedInput.checked = true;
+        }
+
+        // 下載圖片
         const link = document.createElement('a');
         link.download = 'outfit.png';
         link.href = canvas.toDataURL('image/png');
         link.click();
     }).catch(error => {
         console.error('截圖失敗:', error);
-        restoreUI();
+        // 恢復 UI 狀態
+        youtubePlayer.style.display = currentState.youtubePlayerDisplay;
+        saveButton.style.display = currentState.saveButtonDisplay;
+        tabBox.style.display = currentState.tabBoxDisplay;
+        items.forEach(item => item.style.display = '');
     });
 });
+
 
 
 document.addEventListener('DOMContentLoaded', function() {
