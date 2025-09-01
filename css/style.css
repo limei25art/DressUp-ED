@@ -71,8 +71,8 @@ html, body {
   backdrop-filter: blur(1.5px);
   background: radial-gradient(circle,rgba(255, 255, 255, .2) 40%, rgba(255, 255, 255, .6) 90%);
   //background-image: url('../images/main.png');
-  background-repeat: no-repeat;
-  background-position: center;
+  background-repeat: repeat;
+  background-position: auto;
   //background-size: 550px;
   overflow: hidden;
   box-shadow: 2px 5px 10px rgba(28, 74, 131,.5);
